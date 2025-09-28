@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Product } from '../types';
 // FIX: Replaced react-router-dom import to fix module resolution errors.
@@ -6,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {
   product: Product;
+  isGrouped?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, isGrouped = false }) => {
   const navigate = useNavigate();
 
   const handleRequestInfo = (e: React.MouseEvent) => {
@@ -35,7 +35,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <p className="text-sm text-gray-400 mt-1 flex-grow">{product.shortDescription}</p>
         <div className="flex justify-between items-center mt-4">
           <p className="text-xs text-gray-400">{product.presentation}</p>
-          <p className="text-xl font-extrabold text-[#31E0E0]">${product.price.toFixed(2)}</p>
+          <p className="text-xl font-extrabold text-[#31E0E0]">
+            {isGrouped && <span className="text-sm font-normal text-gray-400">Desde </span>}
+            ${product.price.toFixed(2)}
+          </p>
         </div>
         <button 
           onClick={handleRequestInfo}

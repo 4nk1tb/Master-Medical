@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 // FIX: Replaced react-router-dom import to fix module resolution errors.
 import { useLocation } from 'react-router-dom';
@@ -10,6 +9,17 @@ import { Filter, List } from 'lucide-react';
 
 const useQuery = () => {
     return new URLSearchParams(useLocation().search);
+}
+
+interface GroupedProduct {
+  groupId: string;
+  name: string;
+  shortDescription: string;
+  category: Category;
+  form: Form;
+  image: string;
+  minPrice: number;
+  variants: Product[];
 }
 
 const CatalogPage: React.FC = () => {
@@ -32,26 +42,53 @@ const CatalogPage: React.FC = () => {
 
     const uniqueLabs = useMemo(() => ['All', ...Array.from(new Set(products.map(p => p.lab)))], []);
 
+    const groupedProducts = useMemo((): GroupedProduct[] => {
+        const productGroups = new Map<string, Product[]>();
+
+        products.forEach(product => {
+            const groupName = product.name;
+            if (!productGroups.has(groupName)) {
+                productGroups.set(groupName, []);
+            }
+            productGroups.get(groupName)!.push(product);
+        });
+
+        return Array.from(productGroups.values()).map(variants => {
+            variants.sort((a, b) => a.price - b.price);
+            const baseProduct = variants[0];
+            return {
+                groupId: baseProduct.name.toLowerCase().replace(/\s+/g, '-'),
+                name: baseProduct.name,
+                shortDescription: baseProduct.shortDescription,
+                category: baseProduct.category,
+                form: baseProduct.form,
+                image: baseProduct.image,
+                minPrice: baseProduct.price,
+                variants,
+            };
+        });
+    }, []);
+
     const filteredAndSortedProducts = useMemo(() => {
-        let filtered = products.filter(product => {
-            const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-            const matchesCategory = filters.category === 'All' || product.category === filters.category;
-            const matchesForm = filters.form === 'All' || product.form === filters.form;
-            const matchesLab = filters.lab === 'All' || product.lab === filters.lab;
+        let filtered = groupedProducts.filter(group => {
+            const matchesSearch = group.name.toLowerCase().includes(searchTerm.toLowerCase());
+            const matchesCategory = filters.category === 'All' || group.category === filters.category;
+            const matchesForm = filters.form === 'All' || group.form === filters.form;
+            const matchesLab = filters.lab === 'All' || group.variants.some(v => v.lab === filters.lab);
             return matchesSearch && matchesCategory && matchesForm && matchesLab;
         });
 
         return filtered.sort((a, b) => {
             switch (sort) {
-                case 'price-asc': return a.price - b.price;
-                case 'price-desc': return b.price - a.price;
+                case 'price-asc': return a.minPrice - b.minPrice;
+                case 'price-desc': return b.minPrice - a.minPrice;
                 case 'name-desc': return b.name.localeCompare(a.name);
                 case 'name-asc':
                 default:
                     return a.name.localeCompare(b.name);
             }
         });
-    }, [searchTerm, filters, sort]);
+    }, [searchTerm, filters, sort, groupedProducts]);
 
     const FilterControl: React.FC<{ label: string; name: string; value: string; options: { value: string; label: string }[]; onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void }> = ({ label, name, value, options, onChange }) => (
         <div>
@@ -154,9 +191,26 @@ const CatalogPage: React.FC = () => {
                     </div>
                     {filteredAndSortedProducts.length > 0 ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-                            {filteredAndSortedProducts.map(product => (
-                                <ProductCard key={product.id} product={product} />
-                            ))}
+                            {filteredAndSortedProducts.map(group => {
+                                const baseVariant = group.variants[0];
+                                const displayProduct: Product = {
+                                    id: group.groupId,
+                                    name: group.name,
+                                    shortDescription: group.shortDescription,
+                                    description: baseVariant.description,
+                                    category: group.category,
+                                    form: group.form,
+                                    lab: group.variants.length > 1 ? `${group.variants.length} Opciones` : baseVariant.lab,
+                                    price: group.minPrice,
+                                    presentation: baseVariant.presentation,
+                                    image: group.image,
+                                    ingredients: baseVariant.ingredients,
+                                    usage: baseVariant.usage,
+                                    warnings: baseVariant.warnings,
+                                };
+
+                                return <ProductCard key={group.groupId} product={displayProduct} isGrouped={group.variants.length > 1} />;
+                            })}
                         </div>
                     ) : (
                         <div className="text-center py-16 bg-black/20 rounded-lg">
