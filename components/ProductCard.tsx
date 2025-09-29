@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Product } from '../types';
-// FIX: Replaced react-router-dom import to fix module resolution errors.
+// FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {

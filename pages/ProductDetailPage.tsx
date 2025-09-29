@@ -1,5 +1,6 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
-// FIX: Replaced react-router-dom import to fix module resolution errors.
+// FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { useParams, useNavigate } from 'react-router-dom';
 import type { Product } from '../types';
 import Button from '../components/Button';

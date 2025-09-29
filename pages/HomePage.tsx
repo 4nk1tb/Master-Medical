@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Search, Syringe, Pill, HeartPulse, Activity, Flame } from 'lucide-react';
-// FIX: Replaced react-router-dom import to fix module resolution errors.
+// FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { Link, useNavigate } from 'react-router-dom';
 import ParticleBackground from '../components/ParticleBackground';
 import ProductCard from '../components/ProductCard';

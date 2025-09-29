@@ -1,5 +1,6 @@
+
 import React, { useState, useMemo } from 'react';
-// FIX: Replaced react-router-dom import to fix module resolution errors.
+// FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { useLocation } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { products } from '../data/products';

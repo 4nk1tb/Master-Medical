@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-// FIX: Replaced react-router-dom import to fix module resolution errors.
+// FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 

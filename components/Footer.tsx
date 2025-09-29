@@ -1,6 +1,6 @@
 
 import React from 'react';
-// FIX: Replaced react-router-dom import to fix module resolution errors.
+// FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { NavLink } from 'react-router-dom';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 

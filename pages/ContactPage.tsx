@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
-// FIX: Replaced react-router-dom import to fix module resolution errors.
+// FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { useLocation } from 'react-router-dom';
-import { Mail, Phone, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare } from 'lucide-react';
 
 const useQuery = () => {
     return new URLSearchParams(useLocation().search);
@@ -95,23 +94,23 @@ const ContactPage: React.FC = () => {
                         </div>
                     </div>
                      <div className="flex items-start gap-4">
-                        <div className="bg-[#31E0E0]/10 p-3 rounded-md text-[#31E0E0]">
-                           <Phone size={24} />
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold text-white">Teléfono</h3>
-                            <p className="text-gray-400">Para consultas urgentes, de Lunes a Viernes, 9am - 5pm.</p>
-                            <a href="tel:+1234567890" className="text-[#31E0E0] hover:underline">+1 (234) 567-890</a>
-                        </div>
-                    </div>
-                     <div className="flex items-start gap-4">
                         <div className="bg-[#FF4DA3]/10 p-3 rounded-md text-[#FF4DA3]">
                            <MessageSquare size={24} />
                         </div>
                         <div>
-                            <h3 className="text-lg font-semibold text-white">WhatsApp / Telegram</h3>
+                            <h3 className="text-lg font-semibold text-white">WhatsApp</h3>
                             <p className="text-gray-400">Atención rápida y directa para tus dudas.</p>
-                            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="text-[#FF4DA3] hover:underline">Iniciar chat</a>
+                            <a href="https://wa.me/34690656118" target="_blank" rel="noopener noreferrer" className="text-[#FF4DA3] hover:underline">+34 690 65 61 18</a>
+                        </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                        <div className="bg-[#FF4DA3]/10 p-3 rounded-md text-[#FF4DA3]">
+                           <MessageSquare size={24} />
+                        </div>
+                        <div>
+                            <h3 className="text-lg font-semibold text-white">Telegram</h3>
+                            <p className="text-gray-400">Contacta con nuestro perfil de ventas oficial.</p>
+                            <a href="https://t.me/buymastermedical" target="_blank" rel="noopener noreferrer" className="text-[#FF4DA3] hover:underline">@buymastermedical</a>
                         </div>
                     </div>
                 </div>
