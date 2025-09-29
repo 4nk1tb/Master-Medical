@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Search, Syringe, Pill, HeartPulse, Shield, FlaskConical } from 'lucide-react';
+import { Search, Syringe, Pill, HeartPulse, Shield, FlaskConical, ShoppingCart } from 'lucide-react';
 // FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { Link, useNavigate } from 'react-router-dom';
 import ParticleBackground from '../components/ParticleBackground';
@@ -69,7 +68,10 @@ const HomePage: React.FC = () => {
                     <div className="container mx-auto px-6">
                         <h2 className="text-3xl font-bold text-center text-white mb-12">Promociones Especiales</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                            {promoProducts.map(product => (
+                            {promoProducts.map(product => {
+                                const message = `Hola, estoy interesado en comprar la promoción: ${product.name}.`;
+                                const whatsappUrl = `https://wa.me/34690656118?text=${encodeURIComponent(message)}`;
+                                return (
                                 <div key={product.id} onClick={() => navigate(`/product/${product.id}`)}
                                      className="bg-[#1a2647] rounded-lg overflow-hidden group transition-all duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 cursor-pointer border-2 border-transparent hover:border-[#FF4DA3]/50 p-6 flex flex-col text-center items-center">
                                     <span className="absolute top-2 right-2 bg-gradient-to-r from-[#FF4DA3] to-[#ff7acb] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">PROMO</span>
@@ -79,11 +81,18 @@ const HomePage: React.FC = () => {
                                     <p className="text-2xl font-extrabold text-[#FF4DA3] mt-4">
                                         €{product.price.toFixed(2)}
                                     </p>
-                                    <Button to={`/contact?product=${encodeURIComponent(product.name)}`} className="mt-4 !bg-transparent !border-[#FF4DA3] !text-[#FF4DA3] hover:!bg-[#FF4DA3] hover:!text-[#0F1B3A]">
-                                        Solicitar
-                                    </Button>
+                                    <a 
+                                      href={whatsappUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="group/button relative mt-4 inline-flex items-center justify-center px-6 py-2 text-sm font-bold rounded-md transition-all duration-300 ease-out transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-opacity-50 border-2 border-[#FF4DA3] text-[#FF4DA3] hover:bg-[#FF4DA3] hover:text-[#0F1B3A] focus:ring-[#FF4DA3] overflow-hidden"
+                                    >
+                                      <span className="transition-all duration-300 ease-out group-hover/button:opacity-0 group-hover/button:-translate-x-full">Comprar</span>
+                                      <ShoppingCart className="absolute transform translate-x-full opacity-0 transition-all duration-300 ease-out group-hover/button:translate-x-0 group-hover/button:opacity-100" size={20} />
+                                    </a>
                                 </div>
-                            ))}
+                            )})}
                         </div>
                     </div>
                 </section>

@@ -1,9 +1,8 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 // FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { useParams, useNavigate } from 'react-router-dom';
 import type { Product } from '../types';
-import Button from '../components/Button';
+import { ShoppingCart } from 'lucide-react';
 
 interface ProductDetailPageProps {
     products: Product[];
@@ -50,14 +49,23 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products }) => {
             <div className="container mx-auto px-6 py-24 text-center">
                 <h1 className="text-4xl font-bold text-white">Producto no encontrado</h1>
                 <p className="text-gray-400 mt-4">El producto que buscas no existe o fue removido.</p>
-                <Button to="/catalog" className="mt-8">Volver al Catálogo</Button>
+                <button 
+                    onClick={() => navigate('/catalog')} 
+                    className="mt-8 inline-block px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-md transition-all duration-300 ease-out transform hover:-translate-y-1 focus:outline-none focus:ring-4 bg-gradient-to-r from-[#31E0E0] to-[#25a2a2] text-[#0F1B3A] shadow-lg shadow-[#31E0E0]/20 hover:shadow-xl hover:shadow-[#31E0E0]/30 focus:ring-[#31E0E0]/50"
+                >
+                    Volver al Catálogo
+                </button>
             </div>
         );
     }
     
-    const handleRequestInfo = () => {
-        const productName = productGroup && productGroup.length > 1 ? `${product.name} (${product.lab})` : product.name;
-        navigate(`/contact?product=${encodeURIComponent(productName)}`);
+    const handleBuyRequest = () => {
+        const productName = productGroup && productGroup.length > 1 
+            ? `${product.name} (${product.lab} - ${product.presentation})` 
+            : `${product.name} (${product.presentation})`;
+        const message = `Hola, estoy interesado en comprar el siguiente producto: ${productName}`;
+        const whatsappUrl = `https://wa.me/34690656118?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
 
     return (
@@ -123,7 +131,13 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products }) => {
                     </div>
                     
                     <div className="mt-8">
-                        <Button onClick={handleRequestInfo} variant="primary" className="w-full md:w-auto">Solicitar Información</Button>
+                        <button
+                            onClick={handleBuyRequest}
+                            className="group/button relative w-full md:w-auto px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-md transition-all duration-300 ease-out transform hover:-translate-y-1 focus:outline-none focus:ring-4 bg-gradient-to-r from-[#31E0E0] to-[#25a2a2] text-[#0F1B3A] shadow-lg shadow-[#31E0E0]/20 hover:shadow-xl hover:shadow-[#31E0E0]/30 focus:ring-[#31E0E0]/50 flex items-center justify-center overflow-hidden"
+                        >
+                             <span className="transition-all duration-300 ease-out group-hover/button:opacity-0 group-hover/button:-translate-x-full">Comprar</span>
+                             <ShoppingCart className="absolute transform translate-x-full opacity-0 transition-all duration-300 ease-out group-hover/button:translate-x-0 group-hover/button:opacity-100" size={20} />
+                        </button>
                     </div>
                 </div>
             </div>
