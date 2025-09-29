@@ -64,7 +64,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products }) => {
         <div className="container mx-auto px-6 py-12 md:py-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 {/* Product Image */}
-                <div className="bg-[#1a2647] p-8 rounded-lg shadow-lg sticky top-28">
+                <div className="bg-[#1a2647] p-8 rounded-lg shadow-lg md:sticky md:top-28">
                     <img src={product.image} alt={product.name} className="w-full h-auto object-contain rounded-md" />
                 </div>
                 

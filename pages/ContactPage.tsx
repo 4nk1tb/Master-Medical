@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 // FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { useLocation } from 'react-router-dom';
-import { Mail, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare, Loader } from 'lucide-react';
 
 const useQuery = () => {
     return new URLSearchParams(useLocation().search);
 }
+
+// Updated Formspree endpoint
+const FORM_ENDPOINT = 'https://formspree.io/f/xrbyprvw';
 
 const ContactPage: React.FC = () => {
     const query = useQuery();
@@ -18,7 +21,8 @@ const ContactPage: React.FC = () => {
         message: ''
     });
 
-    const [formStatus, setFormStatus] = useState({ submitted: false, message: '' });
+    const [isLoading, setIsLoading] = useState(false);
+    const [formStatus, setFormStatus] = useState<{ submitted: boolean; success: boolean; message: string }>({ submitted: false, success: false, message: '' });
 
     useEffect(() => {
         if (productName) {
@@ -31,12 +35,33 @@ const ContactPage: React.FC = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically send the form data to a server
-        console.log('Form data submitted:', formData);
-        setFormStatus({ submitted: true, message: 'Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.' });
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setIsLoading(true);
+        setFormStatus({ submitted: false, success: false, message: '' });
+
+        try {
+            const response = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setFormStatus({ submitted: true, success: true, message: '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.' });
+                setFormData({ name: '', email: '', phone: '', message: '' });
+            } else {
+                throw new Error('Network response was not ok.');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setFormStatus({ submitted: true, success: false, message: 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde o contáctanos directamente.' });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -51,35 +76,47 @@ const ContactPage: React.FC = () => {
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="bg-black/20 p-8 rounded-lg">
                     <h2 className="text-2xl font-bold text-white mb-6">Envíanos un Mensaje</h2>
-                    {formStatus.submitted ? (
-                        <div className="text-center p-8 bg-green-900/50 border border-green-500 rounded-lg">
-                            <p className="text-lg font-semibold text-green-300">{formStatus.message}</p>
+                    
+                    {formStatus.submitted && (
+                        <div className={`text-center p-4 rounded-lg border mb-6 ${formStatus.success ? 'bg-green-900/50 border-green-500 text-green-300' : 'bg-red-900/50 border-red-500 text-red-300'}`}>
+                            <p className="font-semibold">{formStatus.message}</p>
                         </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Nombre Completo</label>
-                                <input type="text" name="name" id="name" required value={formData.name} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition" />
-                            </div>
-                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Correo Electrónico</label>
-                                <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition" />
-                            </div>
-                             <div>
-                                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">Teléfono (Opcional)</label>
-                                <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition" />
-                            </div>
-                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
-                                <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" className="w-full px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-md transition-all duration-300 ease-out transform hover:-translate-y-1 focus:outline-none focus:ring-4 bg-gradient-to-r from-[#31E0E0] to-[#25a2a2] text-[#0F1B3A] shadow-lg shadow-[#31E0E0]/20 hover:shadow-xl hover:shadow-[#31E0E0]/30 focus:ring-[#31E0E0]/50">
-                                    Enviar Mensaje
-                                </button>
-                            </div>
-                        </form>
                     )}
+
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <div>
+                            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Nombre Completo</label>
+                            <input type="text" name="name" id="name" required value={formData.name} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition" />
+                        </div>
+                         <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Correo Electrónico</label>
+                            <input type="email" name="email" id="email" required value={formData.email} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition" />
+                        </div>
+                         <div>
+                            <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">Teléfono (Opcional)</label>
+                            <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition" />
+                        </div>
+                         <div>
+                            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
+                            <textarea name="message" id="message" rows={5} required value={formData.message} onChange={handleChange} className="w-full bg-[#1a2647] border border-gray-600 rounded-md py-2 px-3 text-white focus:ring-2 focus:ring-[#31E0E0] focus:border-[#31E0E0] transition"></textarea>
+                        </div>
+                        <div>
+                            <button 
+                                type="submit" 
+                                disabled={isLoading}
+                                className="w-full px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-md transition-all duration-300 ease-out transform hover:-translate-y-1 focus:outline-none focus:ring-4 bg-gradient-to-r from-[#31E0E0] to-[#25a2a2] text-[#0F1B3A] shadow-lg shadow-[#31E0E0]/20 hover:shadow-xl hover:shadow-[#31E0E0]/30 focus:ring-[#31E0E0]/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                            >
+                                {isLoading ? (
+                                    <span className="flex items-center justify-center">
+                                        <Loader className="animate-spin mr-2" size={16} />
+                                        Enviando...
+                                    </span>
+                                ) : (
+                                    'Enviar Mensaje'
+                                )}
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 <div className="space-y-8">
                     <h2 className="text-2xl font-bold text-white mb-6">Canales Directos</h2>
