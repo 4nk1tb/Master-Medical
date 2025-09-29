@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, Syringe, Pill, HeartPulse, Activity, Flame } from 'lucide-react';
+import { Search, Syringe, Pill, HeartPulse, Shield, FlaskConical } from 'lucide-react';
 // FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { Link, useNavigate } from 'react-router-dom';
 import ParticleBackground from '../components/ParticleBackground';
@@ -25,7 +25,10 @@ const CategoryCard: React.FC<{ icon: React.ReactNode; title: string; category: C
 };
 
 const HomePage: React.FC = () => {
-    const featuredProducts = products.slice(0, 4);
+    const featuredProducts = products.filter(p => p.category !== Category.Promo).slice(0, 4);
+    const promoProducts = products.filter(p => p.category === Category.Promo);
+
+    const navigate = useNavigate();
 
     return (
         <div className="overflow-x-hidden">
@@ -59,6 +62,32 @@ const HomePage: React.FC = () => {
                     </div>
                 </div>
             </section>
+            
+            {/* Promotions Section */}
+            {promoProducts.length > 0 && (
+                <section className="py-16 sm:py-24 bg-gradient-to-r from-[#31E0E0]/5 to-[#FF4DA3]/5">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-3xl font-bold text-center text-white mb-12">Promociones Especiales</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            {promoProducts.map(product => (
+                                <div key={product.id} onClick={() => navigate(`/product/${product.id}`)}
+                                     className="bg-[#1a2647] rounded-lg overflow-hidden group transition-all duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/50 cursor-pointer border-2 border-transparent hover:border-[#FF4DA3]/50 p-6 flex flex-col text-center items-center">
+                                    <span className="absolute top-2 right-2 bg-gradient-to-r from-[#FF4DA3] to-[#ff7acb] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">PROMO</span>
+                                    <img src={product.image} alt={product.name} className="w-32 h-32 object-cover rounded-full mb-4 border-4 border-gray-700 group-hover:border-[#FF4DA3]/50 transition-colors"/>
+                                    <h3 className="text-xl font-bold text-white">{product.name}</h3>
+                                    <p className="text-sm text-gray-400 mt-1 flex-grow">{product.presentation}</p>
+                                    <p className="text-2xl font-extrabold text-[#FF4DA3] mt-4">
+                                        €{product.price.toFixed(2)}
+                                    </p>
+                                    <Button to={`/contact?product=${encodeURIComponent(product.name)}`} className="mt-4 !bg-transparent !border-[#FF4DA3] !text-[#FF4DA3] hover:!bg-[#FF4DA3] hover:!text-[#0F1B3A]">
+                                        Solicitar
+                                    </Button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* Categories Section */}
             <section className="py-16 sm:py-24">
@@ -67,9 +96,9 @@ const HomePage: React.FC = () => {
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
                         <CategoryCard icon={<Syringe size={40} />} title="Inyectables" category={Category.Inyectables} />
                         <CategoryCard icon={<Pill size={40} />} title="Orales" category={Category.Orales} />
-                        <CategoryCard icon={<HeartPulse size={40} />} title="Bienestar Sexual" category={Category.BienestarSexual} />
-                        <CategoryCard icon={<Activity size={40} />} title="Salud" category={Category.Salud} />
-                        <CategoryCard icon={<Flame size={40} />} title="Quema Grasa" category={Category.QuemaGrasa} />
+                        <CategoryCard icon={<FlaskConical size={40} />} title="HGH & Péptidos" category={Category.HGHPeptides} />
+                        <CategoryCard icon={<Shield size={40} />} title="Salud y Bienestar" category={Category.HealthWellness} />
+                        <CategoryCard icon={<HeartPulse size={40} />} title="Bienestar Sexual" category={Category.SexualWellness} />
                     </div>
                 </div>
             </section>

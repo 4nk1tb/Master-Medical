@@ -1,10 +1,11 @@
 
 export enum Category {
+  Promo = "Promociones",
   Inyectables = "Inyectables",
   Orales = "Orales",
-  BienestarSexual = "Bienestar Sexual",
-  Salud = "Salud",
-  QuemaGrasa = "Quema Grasa",
+  HGHPeptides = "HGH & Péptidos",
+  HealthWellness = "Salud y Bienestar",
+  SexualWellness = "Bienestar Sexual y Estimulantes",
 }
 
 export enum Form {
