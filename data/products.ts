@@ -384,7 +384,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 32,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
@@ -745,7 +745,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 35,
     presentation: "50 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
@@ -851,7 +851,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 15,
     presentation: "10mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
@@ -1212,7 +1212,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 33,
     presentation: "50 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
@@ -1348,7 +1348,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 32,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
