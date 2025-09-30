@@ -29,17 +29,18 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products }) => {
         return singleProduct ? [singleProduct] : [];
     }, [routeId, products]);
 
-    // FIX: Explicitly type the accumulator for `reduce` to ensure `labsGroup` has the correct type.
-    // This resolves an issue where `variants` was being inferred as `unknown` in the component's render method.
+    // FIX: The `variants` variable was inferred as `unknown` because the initial value of the `reduce` function was not correctly typed.
+    // By casting the initial empty object `{}` to `Record<string, Product[]>`, we ensure that the accumulator `acc` and the resulting
+    // `labsGroup` object have the correct type, which resolves the error when calling `.map` on `variants`.
     const labsGroup = useMemo(() => {
-        return productGroup.reduce<Record<string, Product[]>>((acc, variant) => {
+        return productGroup.reduce((acc, variant) => {
             const lab = variant.lab;
             if (!acc[lab]) {
                 acc[lab] = [];
             }
             acc[lab].push(variant);
             return acc;
-        }, {});
+        }, {} as Record<string, Product[]>);
     }, [productGroup]);
     
     const commonDetails = productGroup?.[0];

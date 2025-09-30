@@ -93,7 +93,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 39,
     presentation: "250 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/ANDROMED250-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/NEW%20products%20110822/Injectable/front/TESTOMEDU250-550x550w.jpg`,
     ingredients: ["Testosterone Undecanoate"],
     usage: "Consultar a un especialista para un protocolo de dosificación.",
     warnings: "Los efectos secundarios pueden ser prolongados."
@@ -536,7 +536,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 32,
     presentation: "250 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/ANDROMED250-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/NEW%20products%20110822/Injectable/front/TESTOMEDU250-550x550w.jpg`,
     ingredients: ["Testosterone Undecanoate"],
     usage: "Consultar a un especialista para un protocolo de dosificación.",
     warnings: "Los efectos secundarios pueden ser prolongados."
@@ -940,7 +940,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 32,
     presentation: "250 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/ANDROMED250-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/NEW%20products%20110822/Injectable/front/TESTOMEDU250-550x550w.jpg`,
     ingredients: ["Testosterone Undecanoate"],
     usage: "Consultar a un especialista para un protocolo de dosificación.",
     warnings: "Los efectos secundarios pueden ser prolongados."
