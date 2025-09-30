@@ -1,4 +1,3 @@
-
 import type { Product } from '../types';
 import { Category, Form } from '../types';
 
@@ -23,7 +22,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 99,
     presentation: "12IU x 10 + 10ml",
-    image: `https://picsum.photos/seed/${generateId(["promo", "hgh-120iu-bacteriostatic-water"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/peptides/front/SOMATROPIN100IU-550x550w.jpg`,
     ingredients: ["Somatropin (HGH)", "Bacteriostatic Water"],
     usage: "Consultar a un especialista para protocolo de HGH.",
     warnings: "Conservar en frío una vez reconstituido."
@@ -38,7 +37,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 32,
     presentation: "40mcg x 100 + 5mg x 28",
-    image: `https://picsum.photos/seed/${generateId(["promo", "clenbuterol-nebivolol"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLENOMED40-550x550w.jpg`,
     ingredients: ["Clenbuterol Hydrochloride", "Nebivolol"],
     usage: "Empezar con dosis bajas de Clenbuterol (20-40mcg). Consultar a un especialista para el uso combinado.",
     warnings: "No apto para personas con problemas cardiovasculares preexistentes."
@@ -54,7 +53,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 39,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Enanthate", "Master Medical", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDE250-550x550w.jpg`,
     ingredients: ["Testosterone Enanthate"],
     usage: "Inyectar 1ml intramuscularmente cada 5-7 días.",
     warnings: "Requiere control de estrógenos y terapia post-ciclo."
@@ -69,7 +68,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 39,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Cypionate", "Master Medical", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDC250-550x550w.jpg`,
     ingredients: ["Testosterone Cypionate"],
     usage: "Inyectar 1ml intramuscularmente cada 5-7 días.",
     warnings: "Requiere terapia post-ciclo."
@@ -84,7 +83,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 40,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Sustanon", "Master Medical", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/SUSTAMED250-550x550w.jpg`,
     ingredients: ["Testosterone Blend"],
     usage: "Inyectar 1ml intramuscularmente cada 7-10 días.",
     warnings: "Puede causar fluctuaciones hormonales."
@@ -99,7 +98,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 39,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Undecanoate", "Master Medical", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/ANDROMED250-550x550w.jpg`,
     ingredients: ["Testosterone Undecanoate"],
     usage: "Consultar a un especialista para un protocolo de dosificación.",
     warnings: "Los efectos secundarios pueden ser prolongados."
@@ -114,7 +113,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 29,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Propionate", "Master Medical", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDP100-550x550w.jpg`,
     ingredients: ["Testosterone Propionate"],
     usage: "Inyectar 1ml intramuscularmente cada 1-2 días.",
     warnings: "Requiere inyecciones frecuentes."
@@ -129,7 +128,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 79,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Primobolan Enanthate", "Master Medical", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/PRIMOMED100-550x550w.jpg`,
     ingredients: ["Methenolone Enanthate"],
     usage: "Inyectar 2-4ml por semana.",
     warnings: "Considerado uno de los esteroides más seguros."
@@ -144,7 +143,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 149,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Primobolan Enanthate", "Master Medical", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/PRIMOMED100-550x550w.jpg`,
     ingredients: ["Methenolone Enanthate"],
     usage: "Inyectar 1-2ml por semana.",
     warnings: "Dosis más altas requieren un monitoreo cuidadoso."
@@ -159,7 +158,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 62,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Masteron Enanthate", "Master Medical", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MASTAMEDE200-550x550w.jpg`,
     ingredients: ["Drostanolone Enanthate"],
     usage: "Inyectar 1-2ml por semana.",
     warnings: "Puede acelerar la caída del cabello en individuos predispuestos."
@@ -174,7 +173,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 49,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Masteron Propionate", "Master Medical", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MASTAMEDP100-550x550w.jpg`,
     ingredients: ["Drostanolone Propionate"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Requiere inyecciones frecuentes."
@@ -189,7 +188,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 44,
     presentation: "300 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Nandrolone (DECA)", "Master Medical", "300"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/DECAMED250-550x550w.jpg`,
     ingredients: ["Nandrolone Decanoate"],
     usage: "Inyectar 1-2ml por semana.",
     warnings: "Usar siempre con una base de testosterona."
@@ -204,7 +203,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 32,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Nandrolone (NPP)", "Master Medical", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/NPP100-550x550w.jpg`,
     ingredients: ["Nandrolone Phenylpropionate"],
     usage: "Inyectar 1ml cada 2-3 días.",
     warnings: "Requiere inyecciones más frecuentes que el Decanoate."
@@ -219,7 +218,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 65,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trenbolone Enanthate", "Master Medical", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TRENBOMEDE200-550x550w.jpg`,
     ingredients: ["Trenbolone Enanthate"],
     usage: "Inyectar 1ml por semana, dividido en dos aplicaciones.",
     warnings: "Potentes efectos secundarios. No apto para principiantes."
@@ -234,7 +233,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 52,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trenbolone Acetate", "Master Medical", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TREBOMEDA100-550x550w.jpg`,
     ingredients: ["Trenbolone Acetate"],
     usage: "Inyectar 1ml cada 1-2 días. Solo para usuarios avanzados.",
     warnings: "Potentes efectos secundarios. No apto para principiantes."
@@ -249,7 +248,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 37,
     presentation: "50 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Winstrol (Stanozolol) Inyectable", "Master Medical", "50"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
@@ -264,7 +263,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 45,
     presentation: "300 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Boldenone", "Master Medical", "300"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/BOLDEMED250-550x550w.jpg`,
     ingredients: ["Boldenone Undecylenate"],
     usage: "Inyectar 1-2ml por semana en ciclos largos (12-16 semanas).",
     warnings: "Puede aumentar los glóbulos rojos; se recomienda monitoreo."
@@ -279,7 +278,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 109,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trestolone", "Master Medical", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MENT50-550x550w.jpg`,
     ingredients: ["Trestolone Acetate"],
     usage: "Consultar a un especialista. Requiere manejo avanzado de ciclo.",
     warnings: "Potente y con alta tasa de aromatización. No para principiantes."
@@ -294,7 +293,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 9,
     presentation: "10ml",
-    image: `https://picsum.photos/seed/${generateId(["Bacteriostatic Water", "Master Medical", "10"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/ancillaries/front/BACTERIOSTATICWATER-550x550w.jpg`,
     ingredients: ["Bacteriostatic Water"],
     usage: "Utilizar la cantidad necesaria para reconstituir el producto deseado.",
     warnings: "Desechar el vial después de 28 días de uso."
@@ -310,7 +309,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 34,
     presentation: "40mcg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Clenbuterol", "Master Medical", "40mcg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLENOMED40-550x550w.jpg`,
     ingredients: ["Clenbuterol Hydrochloride 40mcg"],
     usage: "Comenzar con 20mcg por día. No exceder 120mcg.",
     warnings: "Puede causar nerviosismo y aumento del ritmo cardíaco."
@@ -325,7 +324,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 39,
     presentation: "20mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Salbutamol", "Master Medical", "20mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/SALBUTAMED-20.jpg`,
     ingredients: ["Salbutamol"],
     usage: "Dosis divididas a lo largo del día. Consultar a un especialista.",
     warnings: "Controlar la frecuencia cardíaca y la presión arterial."
@@ -355,7 +354,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 36,
     presentation: "25mcg x 100",
-    image: `https://picsum.photos/seed/${generateId(["T3", "Master Medical", "25mcg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/T3-MED25-550x550w.jpg`,
     ingredients: ["Liothyronine Sodium (T3)"],
     usage: "Empezar con 12.5-25mcg por día y aumentar gradualmente.",
     warnings: "El uso incorrecto puede afectar la función tiroidea. Requiere un uso cuidadoso."
@@ -370,7 +369,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 59,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Anavar", "Master Medical", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ANAVAMED10-550x550w.jpg`,
     ingredients: ["Oxandrolone 10mg"],
     usage: "Hombres: 30-50mg al día. Mujeres: 5-10mg al día.",
     warnings: "Baja toxicidad hepática en comparación con otros orales."
@@ -385,7 +384,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 32,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Winstrol Oral", "Master Medical", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
@@ -400,7 +399,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 62,
     presentation: "25mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Proviron", "Master Medical", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/PROVIMED25-550x550w.jpg`,
     ingredients: ["Mesterolone 25mg"],
     usage: "Tomar 25-50mg al día.",
     warnings: "Androgénico, puede causar caída del cabello o acné."
@@ -415,7 +414,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 61,
     presentation: "50mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Anadrol", "Master Medical", "50mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OXYMED50-550x550w.jpg`,
     ingredients: ["Oxymetholone 50mg"],
     usage: "Tomar 50mg al día. No exceder 4-6 semanas de uso.",
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
@@ -430,7 +429,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 32,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Dianabol", "Master Medical", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/DIANAMED10-550x550w.jpg`,
     ingredients: ["Methandienone 10mg"],
     usage: "Tomar 20-40mg al día.",
     warnings: "Hepatotóxico. Causa retención de líquidos."
@@ -445,7 +444,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 87,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Superdrol", "Master Medical", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/SUPERDROL10-550x550w.jpg`,
     ingredients: ["Methyldrostanolone 10mg"],
     usage: "Tomar 10-20mg al día por no más de 4 semanas.",
     warnings: "Altamente hepatotóxico. Requiere un soporte hepático robusto."
@@ -460,7 +459,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 41,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Turinabol", "Master Medical", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/TURIMED10-550x550w.jpg`,
     ingredients: ["4-Chlorodehydromethyltestosterone 10mg"],
     usage: "Tomar 30-50mg al día.",
     warnings: "Hepatotóxico, aunque menos que otros orales."
@@ -475,7 +474,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 77,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["MK677", "Master Medical", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/IBUTAMOREN-550x550w.jpg`,
     ingredients: ["Ibutamoren (MK-677) 10mg"],
     usage: "Tomar 10-25mg al día, preferiblemente antes de dormir.",
     warnings: "Puede causar letargo y aumento del apetito."
@@ -490,7 +489,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 69,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["MK2866", "Master Medical", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OSTARINE-550x550w.jpg`,
     ingredients: ["Ostarine (MK-2866) 10mg"],
     usage: "Tomar 10-20mg al día.",
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
@@ -505,7 +504,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 57,
     presentation: "1mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Arimidex", "Master Medical", "1mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
     ingredients: ["Anastrozole 1mg"],
     usage: "Tomar 0.5mg cada dos días durante el ciclo.",
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
@@ -520,7 +519,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 69,
     presentation: "25mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Exemestano", "Master Medical", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
     ingredients: ["Exemestane 25mg"],
     usage: "Tomar 12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
@@ -535,7 +534,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 54,
     presentation: "50mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Clomiphene", "Master Medical", "50mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
     ingredients: ["Clomiphene Citrate 50mg"],
     usage: "Usar durante 4-6 semanas en PCT, con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales o emocionales."
@@ -550,7 +549,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 69,
     presentation: "12.5mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Enclomiphene", "Master Medical", "12.5mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ENCLOMIMED25-550x550w.jpg`,
     ingredients: ["Enclomiphene Citrate 12.5mg"],
     usage: "Usar en PCT con dosis de 12.5-25mg al día.",
     warnings: "Considerado una opción superior al clomifeno estándar."
@@ -566,7 +565,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 32,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Enanthate", "Deus", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDE250-550x550w.jpg`,
     ingredients: ["Testosterone Enanthate"],
     usage: "Inyectar 1ml intramuscularmente cada 5-7 días.",
     warnings: "Requiere control de estrógenos y terapia post-ciclo."
@@ -581,7 +580,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 32,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Cypionate", "Deus", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDC250-550x550w.jpg`,
     ingredients: ["Testosterone Cypionate"],
     usage: "Inyectar 1ml intramuscularmente cada 5-7 días.",
     warnings: "Requiere terapia post-ciclo."
@@ -596,7 +595,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 34,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Sustanon", "Deus", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/SUSTAMED250-550x550w.jpg`,
     ingredients: ["Testosterone Blend"],
     usage: "Inyectar 1ml intramuscularmente cada 7-10 días.",
     warnings: "Puede causar fluctuaciones hormonales."
@@ -611,7 +610,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 32,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Undecanoate", "Deus", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/ANDROMED250-550x550w.jpg`,
     ingredients: ["Testosterone Undecanoate"],
     usage: "Consultar a un especialista para un protocolo de dosificación.",
     warnings: "Los efectos secundarios pueden ser prolongados."
@@ -626,7 +625,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 29,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Propionate", "Deus", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDP100-550x550w.jpg`,
     ingredients: ["Testosterone Propionate"],
     usage: "Inyectar 1ml intramuscularmente cada 1-2 días.",
     warnings: "Requiere inyecciones frecuentes."
@@ -641,7 +640,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 62,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Primobolan Enanthate", "Deus", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/PRIMOMED100-550x550w.jpg`,
     ingredients: ["Methenolone Enanthate"],
     usage: "Inyectar 2-4ml por semana.",
     warnings: "Considerado uno de los esteroides más seguros."
@@ -656,7 +655,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 55,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Masteron Enanthate", "Deus", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MASTAMEDE200-550x550w.jpg`,
     ingredients: ["Drostanolone Enanthate"],
     usage: "Inyectar 1-2ml por semana.",
     warnings: "Puede acelerar la caída del cabello en individuos predispuestos."
@@ -671,7 +670,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 42,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Masteron Propionate", "Deus", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MASTAMEDP100-550x550w.jpg`,
     ingredients: ["Drostanolone Propionate"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Requiere inyecciones frecuentes."
@@ -686,7 +685,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 40,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Nandrolone (DECA)", "Deus", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/DECAMED250-550x550w.jpg`,
     ingredients: ["Nandrolone Decanoate"],
     usage: "Inyectar 1-2ml por semana.",
     warnings: "Usar siempre con una base de testosterona."
@@ -701,7 +700,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 33,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Nandrolone (NPP)", "Deus", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/NPP100-550x550w.jpg`,
     ingredients: ["Nandrolone Phenylpropionate"],
     usage: "Inyectar 1ml cada 2-3 días.",
     warnings: "Requiere inyecciones más frecuentes que el Decanoate."
@@ -716,7 +715,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 52,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trenbolone Enanthate", "Deus", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TRENBOMEDE200-550x550w.jpg`,
     ingredients: ["Trenbolone Enanthate"],
     usage: "Inyectar 1ml por semana, dividido en dos aplicaciones.",
     warnings: "Potentes efectos secundarios. No apto para principiantes."
@@ -731,7 +730,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 43,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trenbolone Acetate", "Deus", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TREBOMEDA100-550x550w.jpg`,
     ingredients: ["Trenbolone Acetate"],
     usage: "Inyectar 1ml cada 1-2 días. Solo para usuarios avanzados.",
     warnings: "Potentes efectos secundarios. No apto para principiantes."
@@ -746,7 +745,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 35,
     presentation: "50 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Winstrol (Stanozolol) Inyectable", "Deus", "50"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
@@ -761,7 +760,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 40,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Boldenone", "Deus", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/BOLDEMED250-550x550w.jpg`,
     ingredients: ["Boldenone Undecylenate"],
     usage: "Inyectar 1-2ml por semana en ciclos largos (12-16 semanas).",
     warnings: "Puede aumentar los glóbulos rojos; se recomienda monitoreo."
@@ -776,7 +775,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 102,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trestolone", "Deus", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MENT50-550x550w.jpg`,
     ingredients: ["Trestolone Acetate"],
     usage: "Consultar a un especialista. Requiere manejo avanzado de ciclo.",
     warnings: "Potente y con alta tasa de aromatización. No para principiantes."
@@ -791,7 +790,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 12,
     presentation: "10ml",
-    image: `https://picsum.photos/seed/${generateId(["Bacteriostatic Water", "Deus", "10"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/ancillaries/front/BACTERIOSTATICWATER-550x550w.jpg`,
     ingredients: ["Bacteriostatic Water"],
     usage: "Utilizar la cantidad necesaria para reconstituir el producto deseado.",
     warnings: "Desechar el vial después de 28 días de uso."
@@ -807,7 +806,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 15,
     presentation: "40mcg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Clenbuterol", "Deus", "40mcg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLENOMED40-550x550w.jpg`,
     ingredients: ["Clenbuterol Hydrochloride 40mcg"],
     usage: "Comenzar con 20mcg por día. No exceder 120mcg.",
     warnings: "Puede causar nerviosismo y aumento del ritmo cardíaco."
@@ -822,7 +821,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 15,
     presentation: "25mcg x 50",
-    image: `https://picsum.photos/seed/${generateId(["T3", "Deus", "25mcg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/T3-MED25-550x550w.jpg`,
     ingredients: ["Liothyronine Sodium (T3)"],
     usage: "Empezar con 12.5-25mcg por día y aumentar gradualmente.",
     warnings: "El uso incorrecto puede afectar la función tiroidea. Requiere un uso cuidadoso."
@@ -837,7 +836,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 25,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Anavar", "Deus", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ANAVAMED10-550x550w.jpg`,
     ingredients: ["Oxandrolone 10mg"],
     usage: "Hombres: 30-50mg al día. Mujeres: 5-10mg al día.",
     warnings: "Baja toxicidad hepática en comparación con otros orales."
@@ -852,7 +851,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 15,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Winstrol Oral", "Deus", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
@@ -867,7 +866,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 25,
     presentation: "25mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Proviron", "Deus", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/PROVIMED25-550x550w.jpg`,
     ingredients: ["Mesterolone 25mg"],
     usage: "Tomar 25-50mg al día.",
     warnings: "Androgénico, puede causar caída del cabello o acné."
@@ -882,7 +881,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 29,
     presentation: "50mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Anadrol", "Deus", "50mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OXYMED50-550x550w.jpg`,
     ingredients: ["Oxymetholone 50mg"],
     usage: "Tomar 50mg al día. No exceder 4-6 semanas de uso.",
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
@@ -897,7 +896,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 15,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Dianabol", "Deus", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/DIANAMED10-550x550w.jpg`,
     ingredients: ["Methandienone 10mg"],
     usage: "Tomar 20-40mg al día.",
     warnings: "Hepatotóxico. Causa retención de líquidos."
@@ -912,7 +911,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 44,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Superdrol", "Deus", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/SUPERDROL10-550x550w.jpg`,
     ingredients: ["Methyldrostanolone 10mg"],
     usage: "Tomar 10-20mg al día por no más de 4 semanas.",
     warnings: "Altamente hepatotóxico. Requiere un soporte hepático robusto."
@@ -927,7 +926,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 21,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Turinabol", "Deus", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/TURIMED10-550x550w.jpg`,
     ingredients: ["4-Chlorodehydromethyltestosterone 10mg"],
     usage: "Tomar 30-50mg al día.",
     warnings: "Hepatotóxico, aunque menos que otros orales."
@@ -942,7 +941,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 43,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["MK677", "Deus", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/IBUTAMOREN-550x550w.jpg`,
     ingredients: ["Ibutamoren (MK-677) 10mg"],
     usage: "Tomar 10-25mg al día, preferiblemente antes de dormir.",
     warnings: "Puede causar letargo y aumento del apetito."
@@ -957,7 +956,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 37,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["MK2866", "Deus", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OSTARINE-550x550w.jpg`,
     ingredients: ["Ostarine (MK-2866) 10mg"],
     usage: "Tomar 10-20mg al día.",
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
@@ -972,7 +971,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 31,
     presentation: "1mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Arimidex", "Deus", "1mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
     ingredients: ["Anastrozole 1mg"],
     usage: "Tomar 0.5mg cada dos días durante el ciclo.",
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
@@ -987,7 +986,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 32,
     presentation: "25mg x 25",
-    image: `https://picsum.photos/seed/${generateId(["Exemestano", "Deus", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
     ingredients: ["Exemestane 25mg"],
     usage: "Tomar 12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
@@ -1002,7 +1001,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 24,
     presentation: "50mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Clomiphene", "Deus", "50mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
     ingredients: ["Clomiphene Citrate 50mg"],
     usage: "Usar durante 4-6 semanas en PCT, con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales o emocionales."
@@ -1017,7 +1016,7 @@ export const products: Product[] = [
     lab: "Deus",
     price: 65,
     presentation: "25mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Enclomiphene", "Deus", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ENCLOMIMED25-550x550w.jpg`,
     ingredients: ["Enclomiphene Citrate 25mg"],
     usage: "Usar en PCT con dosis de 12.5-25mg al día.",
     warnings: "Considerado una opción superior al clomifeno estándar."
@@ -1033,7 +1032,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 37,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Enanthate", "Driada", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDE250-550x550w.jpg`,
     ingredients: ["Testosterone Enanthate"],
     usage: "Inyectar 1ml intramuscularmente cada 5-7 días.",
     warnings: "Requiere control de estrógenos y terapia post-ciclo."
@@ -1048,7 +1047,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 37,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Cypionate", "Driada", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDC250-550x550w.jpg`,
     ingredients: ["Testosterone Cypionate"],
     usage: "Inyectar 1ml intramuscularmente cada 5-7 días.",
     warnings: "Requiere terapia post-ciclo."
@@ -1063,7 +1062,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 38,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Sustanon", "Driada", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/SUSTAMED250-550x550w.jpg`,
     ingredients: ["Testosterone Blend"],
     usage: "Inyectar 1ml intramuscularmente cada 7-10 días.",
     warnings: "Puede causar fluctuaciones hormonales."
@@ -1078,7 +1077,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 32,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Undecanoate", "Driada", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/ANDROMED250-550x550w.jpg`,
     ingredients: ["Testosterone Undecanoate"],
     usage: "Consultar a un especialista para un protocolo de dosificación.",
     warnings: "Los efectos secundarios pueden ser prolongados."
@@ -1093,7 +1092,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 30,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Testosterone Propionate", "Driada", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TESTOMEDP100-550x550w.jpg`,
     ingredients: ["Testosterone Propionate"],
     usage: "Inyectar 1ml intramuscularmente cada 1-2 días.",
     warnings: "Requiere inyecciones frecuentes."
@@ -1108,7 +1107,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 77,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Primobolan Enanthate", "Driada", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/PRIMOMED100-550x550w.jpg`,
     ingredients: ["Methenolone Enanthate"],
     usage: "Inyectar 2-4ml por semana.",
     warnings: "Considerado uno de los esteroides más seguros."
@@ -1123,7 +1122,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 65,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Masteron Enanthate", "Driada", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MASTAMEDE200-550x550w.jpg`,
     ingredients: ["Drostanolone Enanthate"],
     usage: "Inyectar 1-2ml por semana.",
     warnings: "Puede acelerar la caída del cabello en individuos predispuestos."
@@ -1138,7 +1137,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 50,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Masteron Propionate", "Driada", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MASTAMEDP100-550x550w.jpg`,
     ingredients: ["Drostanolone Propionate"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Requiere inyecciones frecuentes."
@@ -1153,7 +1152,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 38,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Nandrolone (DECA)", "Driada", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/DECAMED250-550x550w.jpg`,
     ingredients: ["Nandrolone Decanoate"],
     usage: "Inyectar 1-2ml por semana.",
     warnings: "Usar siempre con una base de testosterona."
@@ -1168,7 +1167,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 32,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Nandrolone (NPP)", "Driada", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/NPP100-550x550w.jpg`,
     ingredients: ["Nandrolone Phenylpropionate"],
     usage: "Inyectar 1ml cada 2-3 días.",
     warnings: "Requiere inyecciones más frecuentes que el Decanoate."
@@ -1183,7 +1182,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 55,
     presentation: "200 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trenbolone Enanthate", "Driada", "200"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TRENBOMEDE200-550x550w.jpg`,
     ingredients: ["Trenbolone Enanthate"],
     usage: "Inyectar 1ml por semana, dividido en dos aplicaciones.",
     warnings: "Potentes efectos secundarios. No apto para principiantes."
@@ -1198,7 +1197,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 50,
     presentation: "100 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trenbolone Acetate", "Driada", "100"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/TREBOMEDA100-550x550w.jpg`,
     ingredients: ["Trenbolone Acetate"],
     usage: "Inyectar 1ml cada 1-2 días. Solo para usuarios avanzados.",
     warnings: "Potentes efectos secundarios. No apto para principiantes."
@@ -1213,7 +1212,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 33,
     presentation: "50 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Winstrol (Stanozolol) Inyectable", "Driada", "50"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
@@ -1228,7 +1227,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 40,
     presentation: "250 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Boldenone", "Driada", "250"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/BOLDEMED250-550x550w.jpg`,
     ingredients: ["Boldenone Undecylenate"],
     usage: "Inyectar 1-2ml por semana en ciclos largos (12-16 semanas).",
     warnings: "Puede aumentar los glóbulos rojos; se recomienda monitoreo."
@@ -1243,7 +1242,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 60,
     presentation: "50 mg/ml x 10",
-    image: `https://picsum.photos/seed/${generateId(["Trestolone", "Driada", "50"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MENT50-550x550w.jpg`,
     ingredients: ["Trestolone Acetate"],
     usage: "Consultar a un especialista. Requiere manejo avanzado de ciclo.",
     warnings: "Potente y con alta tasa de aromatización. No para principiantes."
@@ -1258,7 +1257,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 12,
     presentation: "10ml",
-    image: `https://picsum.photos/seed/${generateId(["Bacteriostatic Water", "Driada", "10"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/ancillaries/front/BACTERIOSTATICWATER-550x550w.jpg`,
     ingredients: ["Bacteriostatic Water"],
     usage: "Utilizar la cantidad necesaria para reconstituir el producto deseado.",
     warnings: "Desechar el vial después de 28 días de uso."
@@ -1274,7 +1273,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 22,
     presentation: "100mg x 20",
-    image: `https://picsum.photos/seed/${generateId(["Modafinilo", "Driada", "100mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2023/12/MODAFINIL-200.jpg`,
     ingredients: ["Modafinil"],
     usage: "Tomar 100-200mg por la mañana.",
     warnings: "Puede interferir con el sueño si se toma tarde."
@@ -1289,7 +1288,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 25,
     presentation: "40mcg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Clenbuterol", "Driada", "40mcg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLENOMED40-550x550w.jpg`,
     ingredients: ["Clenbuterol Hydrochloride 40mcg"],
     usage: "Comenzar con 20mcg por día. No exceder 120mcg.",
     warnings: "Puede causar nerviosismo y aumento del ritmo cardíaco."
@@ -1304,7 +1303,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 21,
     presentation: "2.5mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Yohimbine", "Driada", "2.5mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/YOHIMBINE-10.jpg`,
     ingredients: ["Yohimbine HCL"],
     usage: "Tomar 2.5-5mg en ayunas, preferiblemente antes del cardio.",
     warnings: "Puede causar ansiedad o aumento de la presión arterial."
@@ -1319,7 +1318,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 21,
     presentation: "25mcg x 100",
-    image: `https://picsum.photos/seed/${generateId(["T3", "Driada", "25mcg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/T3-MED25-550x550w.jpg`,
     ingredients: ["Liothyronine Sodium (T3)"],
     usage: "Empezar con 12.5-25mcg por día y aumentar gradualmente.",
     warnings: "El uso incorrecto puede afectar la función tiroidea. Requiere un uso cuidadoso."
@@ -1334,7 +1333,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 50,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Anavar", "Driada", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ANAVAMED10-550x550w.jpg`,
     ingredients: ["Oxandrolone 10mg"],
     usage: "Hombres: 30-50mg al día. Mujeres: 5-10mg al día.",
     warnings: "Baja toxicidad hepática en comparación con otros orales."
@@ -1349,7 +1348,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 32,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Winstrol Oral", "Driada", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
@@ -1364,7 +1363,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 35,
     presentation: "25mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Proviron", "Driada", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/PROVIMED25-550x550w.jpg`,
     ingredients: ["Mesterolone 25mg"],
     usage: "Tomar 25-50mg al día.",
     warnings: "Androgénico, puede causar caída del cabello o acné."
@@ -1379,7 +1378,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 34,
     presentation: "50mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Anadrol", "Driada", "50mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OXYMED50-550x550w.jpg`,
     ingredients: ["Oxymetholone 50mg"],
     usage: "Tomar 50mg al día. No exceder 4-6 semanas de uso.",
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
@@ -1394,7 +1393,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 30,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Dianabol", "Driada", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/DIANAMED10-550x550w.jpg`,
     ingredients: ["Methandienone 10mg"],
     usage: "Tomar 20-40mg al día.",
     warnings: "Hepatotóxico. Causa retención de líquidos."
@@ -1409,7 +1408,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 38,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Superdrol", "Driada", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/SUPERDROL10-550x550w.jpg`,
     ingredients: ["Methyldrostanolone 10mg"],
     usage: "Tomar 10-20mg al día por no más de 4 semanas.",
     warnings: "Altamente hepatotóxico. Requiere un soporte hepático robusto."
@@ -1424,7 +1423,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 38,
     presentation: "10mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Turinabol", "Driada", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/TURIMED10-550x550w.jpg`,
     ingredients: ["4-Chlorodehydromethyltestosterone 10mg"],
     usage: "Tomar 30-50mg al día.",
     warnings: "Hepatotóxico, aunque menos que otros orales."
@@ -1439,7 +1438,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 39,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["MK677", "Driada", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/IBUTAMOREN-550x550w.jpg`,
     ingredients: ["Ibutamoren (MK-677) 10mg"],
     usage: "Tomar 10-25mg al día, preferiblemente antes de dormir.",
     warnings: "Puede causar letargo y aumento del apetito."
@@ -1454,7 +1453,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 32,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["MK2866", "Driada", "10mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OSTARINE-550x550w.jpg`,
     ingredients: ["Ostarine (MK-2866) 10mg"],
     usage: "Tomar 10-20mg al día.",
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
@@ -1469,7 +1468,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 26,
     presentation: "0.5mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Arimidex", "Driada", "0.5mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
     ingredients: ["Anastrozole 0.5mg"],
     usage: "Tomar 0.5mg cada dos días durante el ciclo.",
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
@@ -1484,7 +1483,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 52,
     presentation: "25mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Exemestano", "Driada", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
     ingredients: ["Exemestane 25mg"],
     usage: "Tomar 12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
@@ -1499,7 +1498,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 24,
     presentation: "25mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Clomiphene", "Driada", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
     ingredients: ["Clomiphene Citrate 25mg"],
     usage: "Usar durante 4-6 semanas en PCT, con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales o emocionales."
@@ -1514,7 +1513,7 @@ export const products: Product[] = [
     lab: "Driada",
     price: 40,
     presentation: "12.5mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Enclomiphene", "Driada", "12.5mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ENCLOMIMED25-550x550w.jpg`,
     ingredients: ["Enclomiphene Citrate 12.5mg"],
     usage: "Usar en PCT con dosis de 12.5-25mg al día.",
     warnings: "Considerado una opción superior al clomifeno estándar."
@@ -1530,7 +1529,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 36,
     presentation: "5000IU x 1",
-    image: `https://picsum.photos/seed/${generateId(["HCG", "Pharmacy", "5000IU"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/peptides/front/HCG5000IU-550x550w.jpg`,
     ingredients: ["Human Chorionic Gonadotropin"],
     usage: "Usar durante el ciclo o al inicio del PCT. Consultar especialista.",
     warnings: "Almacenar en frío una vez reconstituido."
@@ -1545,7 +1544,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 99,
     presentation: "12IU x 10",
-    image: `https://picsum.photos/seed/${generateId(["HGH", "Pharmacy", "120IU"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/peptides/front/SOMATROPIN100IU-550x550w.jpg`,
     ingredients: ["Somatropin"],
     usage: "Inyecciones subcutáneas diarias. Consultar especialista para dosis.",
     warnings: "Requiere almacenamiento en frío."
@@ -1560,7 +1559,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 139,
     presentation: "18IU x 10",
-    image: `https://picsum.photos/seed/${generateId(["HGH", "Pharmacy", "180IU"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/peptides/front/SOMATROPIN100IU-550x550w.jpg`,
     ingredients: ["Somatropin"],
     usage: "Inyecciones subcutáneas diarias. Consultar especialista para dosis.",
     warnings: "Requiere almacenamiento en frío."
@@ -1575,7 +1574,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 189,
     presentation: "28IU x 10",
-    image: `https://picsum.photos/seed/${generateId(["HGH", "Pharmacy", "280IU"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/peptides/front/SOMATROPIN100IU-550x550w.jpg`,
     ingredients: ["Somatropin"],
     usage: "Inyecciones subcutáneas diarias. Consultar especialista para dosis.",
     warnings: "Requiere almacenamiento en frío."
@@ -1590,7 +1589,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 25,
     presentation: "5mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Retatrutide", "Pharmacy", "5mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2023/10/RETATIDE-10.jpg`,
     ingredients: ["Retatrutide"],
     usage: "Consultar protocolos de investigación.",
     warnings: "Producto de investigación."
@@ -1605,7 +1604,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 44,
     presentation: "10mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Retatrutide", "Pharmacy", "10mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2023/10/RETATIDE-10.jpg`,
     ingredients: ["Retatrutide"],
     usage: "Consultar protocolos de investigación.",
     warnings: "Producto de investigación."
@@ -1620,7 +1619,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 82,
     presentation: "25mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Retatrutide", "Pharmacy", "25mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2023/10/RETATIDE-10.jpg`,
     ingredients: ["Retatrutide"],
     usage: "Consultar protocolos de investigación.",
     warnings: "Producto de investigación."
@@ -1635,7 +1634,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 74,
     presentation: "10mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Tirzepatide", "Pharmacy", "10mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2023/08/TIRZAMED-15.jpg`,
     ingredients: ["Tirzepatide"],
     usage: "Inyección subcutánea semanal. Empezar con dosis bajas.",
     warnings: "Puede causar efectos secundarios gastrointestinales."
@@ -1650,7 +1649,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 51,
     presentation: "5mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Semaglutide", "Pharmacy", "5mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2023/07/SEMAMED-5.jpg`,
     ingredients: ["Semaglutide"],
     usage: "Inyección subcutánea semanal. Empezar con dosis bajas.",
     warnings: "Puede causar efectos secundarios gastrointestinales."
@@ -1665,7 +1664,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 21,
     presentation: "2mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Ipamorelin", "Pharmacy", "2mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/IPAMORELIN.jpg`,
     ingredients: ["Ipamorelin"],
     usage: "Inyecciones subcutáneas, a menudo combinado con un GHRH.",
     warnings: "Almacenar en frío una vez reconstituido."
@@ -1680,7 +1679,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 109,
     presentation: "10mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Tesamorelin", "Pharmacy", "10mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/TESAMORELIN.jpg`,
     ingredients: ["Tesamorelin"],
     usage: "Inyecciones subcutáneas diarias.",
     warnings: "Almacenar en frío una vez reconstituido."
@@ -1695,7 +1694,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 39,
     presentation: "5mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["HGH-Frag", "Pharmacy", "5mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/HGH-FRAG-176-191.jpg`,
     ingredients: ["HGH Fragment 176-191"],
     usage: "Inyecciones subcutáneas, a menudo en ayunas o antes del cardio.",
     warnings: "No comer 1-2 horas antes o después de la administración."
@@ -1710,7 +1709,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 27,
     presentation: "10mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["Melanotan-2", "Pharmacy", "10mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/MELANOTAN-II.jpg`,
     ingredients: ["Melanotan II"],
     usage: "Inyecciones subcutáneas. Empezar con dosis muy bajas para evaluar la tolerancia.",
     warnings: "Puede causar náuseas y enrojecimiento facial inicial."
@@ -1725,7 +1724,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 52,
     presentation: "50mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["GHK-Cu", "Pharmacy", "50mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/GHK-CU.jpg`,
     ingredients: ["GHK-Cu"],
     usage: "Puede usarse por vía tópica o subcutánea.",
     warnings: "Consultar un especialista para el método de aplicación."
@@ -1755,7 +1754,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 25,
     presentation: "2mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["TB-500", "Pharmacy", "2mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/TB-500.jpg`,
     ingredients: ["TB-500"],
     usage: "Inyecciones subcutáneas.",
     warnings: "Almacenar en frío una vez reconstituido."
@@ -1770,7 +1769,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 29,
     presentation: "5mg x 1",
-    image: `https://picsum.photos/seed/${generateId(["BPC-157", "Pharmacy", "5mg"])}/400/400`,
+    image: `https://driada-medical.com/wp-content/uploads/2022/07/BPC-157.jpg`,
     ingredients: ["BPC-157"],
     usage: "Inyecciones subcutáneas, preferiblemente cerca del área de la lesión.",
     warnings: "Almacenar en frío una vez reconstituido."
@@ -1786,7 +1785,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 54,
     presentation: "50mg x 30",
-    image: `https://picsum.photos/seed/${generateId(["Testogel", "Pharmacy", "50mg"])}/400/400`,
+    image: `https://www.pricerunner.com/product/1200x630/1871233860/Testogel-Gel-50mg-30-Doses.jpg`,
     ingredients: ["Testosterone"],
     usage: "Aplicar sobre la piel limpia y seca una vez al día.",
     warnings: "Evitar el contacto de la zona de aplicación con otras personas."
@@ -1801,7 +1800,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 70,
     presentation: "6500iu x 1",
-    image: `https://picsum.photos/seed/${generateId(["Ovitrelle", "Pharmacy", "6500iu"])}/400/400`,
+    image: `https://farmaciasdelnino.mx/sites/default/files/ovitrelle_6500_ui_solucion_inyectable_caja_con_1_jeringa_prellenada_con_0.5_ml_y_2_agujas_1.jpg`,
     ingredients: ["Choriogonadotropin alfa"],
     usage: "Consultar a un especialista para su uso.",
     warnings: "Requiere almacenamiento en frío."
@@ -1816,7 +1815,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 12,
     presentation: "10ml",
-    image: `https://picsum.photos/seed/${generateId(["B12", "Pharmacy", "10ml"])}/400/400`,
+    image: `https://okfarma.es/4925-large_default/optovite-b12-1000-mcg-ml-solucion-inyectable-5-ampollas-1-ml.jpg`,
     ingredients: ["Cyanocobalamin (Vitamin B12)"],
     usage: "Inyección intramuscular. Consultar dosis.",
     warnings: "Generalmente seguro, pero consultar a un médico."
@@ -1831,7 +1830,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 24,
     presentation: "40mg x 28",
-    image: `https://picsum.photos/seed/${generateId(["Telmisartan", "Pharmacy", "40mg"])}/400/400`,
+    image: `https://www.laboratoriosbernabo.com/wp-content/uploads/2018/09/Disarval-40-x-28-comp.-rec..png`,
     ingredients: ["Telmisartan"],
     usage: "Tomar según prescripción médica.",
     warnings: "Requiere supervisión médica."
@@ -1846,7 +1845,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 22,
     presentation: "20mg x 60",
-    image: `https://picsum.photos/seed/${generateId(["Tamoxifen", "Pharmacy", "20mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/TAMOXIMED20-550x550w.jpg`,
     ingredients: ["Tamoxifen Citrate"],
     usage: "10-40mg al día, dependiendo del propósito (prevención o PCT).",
     warnings: "Puede tener efectos secundarios. Usar bajo supervisión."
@@ -1861,7 +1860,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 17,
     presentation: "5mg x 28",
-    image: `https://picsum.photos/seed/${generateId(["Nebivolol", "Pharmacy", "5mg"])}/400/400`,
+    image: `https://www.calox.com/wp-content/uploads/2022/04/nebivolol-5-mg-x-30-comprimidos-calox-01.jpg`,
     ingredients: ["Nebivolol"],
     usage: "Tomar según prescripción médica.",
     warnings: "Requiere supervisión médica."
@@ -1876,7 +1875,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 21,
     presentation: "1mg x 28",
-    image: `https://picsum.photos/seed/${generateId(["Pitavastatin", "Pharmacy", "1mg"])}/400/400`,
+    image: `https://5.imimg.com/data5/ANDROID/Default/2023/1/KM/EX/EV/10839818/product-jpeg-500x500.jpg`,
     ingredients: ["Pitavastatin"],
     usage: "Tomar según prescripción médica.",
     warnings: "Requiere supervisión médica y análisis de sangre."
@@ -1891,7 +1890,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 34,
     presentation: "2mg x 28",
-    image: `https://picsum.photos/seed/${generateId(["Pitavastatin", "Pharmacy", "2mg"])}/400/400`,
+    image: `https://5.imimg.com/data5/ANDROID/Default/2023/1/KM/EX/EV/10839818/product-jpeg-500x500.jpg`,
     ingredients: ["Pitavastatin"],
     usage: "Tomar según prescripción médica.",
     warnings: "Requiere supervisión médica y análisis de sangre."
@@ -1906,7 +1905,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 25,
     presentation: "300mg x 60",
-    image: `https://picsum.photos/seed/${generateId(["Ursobilane", "Pharmacy", "300mg"])}/400/400`,
+    image: `https://www.farmaciamarket.es/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/u/r/ursobilane-300-mg-60-capsulas-duras.jpg`,
     ingredients: ["Ursodeoxycholic acid"],
     usage: "Consultar a un especialista para dosificación.",
     warnings: "Apoyo hepático esencial."
@@ -1921,7 +1920,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 32,
     presentation: "0.5mg x 8",
-    image: `https://picsum.photos/seed/${generateId(["Cabergoline", "Pharmacy", "0.5mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CABERGOMED05-550x550w.jpg`,
     ingredients: ["Cabergoline"],
     usage: "Tomar 0.25-0.5mg dos veces por semana según sea necesario.",
     warnings: "Potente, usar con precaución y basado en análisis."
@@ -1936,7 +1935,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 16,
     presentation: "100mcg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Eutirox", "Pharmacy", "100mcg"])}/400/400`,
+    image: `https://www.farmalisto.com.mx/51357-large_default/comprar-eutirox-100-mcg-caja-con-100-tabletas-precio.jpg`,
     ingredients: ["Levothyroxine Sodium (T4)"],
     usage: "Tomar según prescripción médica.",
     warnings: "Requiere supervisión médica estricta."
@@ -1951,7 +1950,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 24,
     presentation: "50mg x 24",
-    image: `https://picsum.photos/seed/${generateId(["Efedrina", "Pharmacy", "50mg"])}/400/400`,
+    image: `https://www.cruzverde.cl/dw/image/v2/BDPM_PRD/on/demandware.static/-/Sites-master-catalog-cruzverde/default/dwd3699c64/images/large/2405-efedrina-sulfato-comprimido-20mg-24.jpg?sw=1000&sh=1000`,
     ingredients: ["Ephedrine"],
     usage: "Usar con precaución en dosis bajas.",
     warnings: "Potente estimulante, no apto para todos."
@@ -1966,7 +1965,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 8,
     presentation: "1000mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Metformin", "Pharmacy", "1000mg"])}/400/400`,
+    image: `https://quimpharma.com/wp-content/uploads/2021/01/Metformina-850-1.jpg`,
     ingredients: ["Metformin"],
     usage: "Tomar con las comidas para reducir efectos secundarios.",
     warnings: "Consultar a un médico para su uso."
@@ -1981,7 +1980,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 16,
     presentation: "300IU",
-    image: `https://picsum.photos/seed/${generateId(["Novorapid", "Pharmacy", "300IU"])}/400/400`,
+    image: `https://www.farmaciacatedral.com.py/16909-large_default/novorapid-flexpen-100-u-ml-solucion-inyectable-en-pluma-precargada-n-f.jpg`,
     ingredients: ["Insulin Aspart"],
     usage: "Uso extremadamente avanzado y peligroso. Requiere conocimiento experto.",
     warnings: "El uso incorrecto puede ser fatal. No usar sin supervisión experta."
@@ -1996,7 +1995,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 21,
     presentation: "300IU",
-    image: `https://picsum.photos/seed/${generateId(["Lantus", "Pharmacy", "300IU"])}/400/400`,
+    image: `https://www.farmaciasanpablo.com.mx/media/catalog/product/0/0/00000000000750128767355_1.jpg`,
     ingredients: ["Insulin Glargine"],
     usage: "Uso extremadamente avanzado y peligroso. Requiere conocimiento experto.",
     warnings: "El uso incorrecto puede ser fatal. No usar sin supervisión experta."
@@ -2011,7 +2010,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 32,
     presentation: "10mg x 50",
-    image: `https://picsum.photos/seed/${generateId(["Isotretinoina", "Pharmacy", "10mg"])}/400/400`,
+    image: `https://www.farmaciamarket.es/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/e/dercutane-10-mg-50-capsulas-blandas_1.jpg`,
     ingredients: ["Isotretinoin"],
     usage: "Tomar según prescripción médica.",
     warnings: "Requiere supervisión médica estricta debido a sus potentes efectos secundarios."
@@ -2026,7 +2025,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 59,
     presentation: "5mg x 100",
-    image: `https://picsum.photos/seed/${generateId(["Minoxidil", "Pharmacy", "5mg"])}/400/400`,
+    image: `https://cdn.shopify.com/s/files/1/0568/2654/2293/products/minoxidil-oral-5mg-100-comprimidos-loniten-generico-anti-calvicie-287.jpg?v=1658421067`,
     ingredients: ["Minoxidil"],
     usage: "Dosis bajas (1.25-5mg) bajo supervisión médica.",
     warnings: "Puede afectar la presión arterial."
@@ -2041,7 +2040,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 28,
     presentation: "1mg x 28",
-    image: `https://picsum.photos/seed/${generateId(["Finasteride", "Pharmacy", "1mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/FINAMED1-550x550w.jpg`,
     ingredients: ["Finasteride"],
     usage: "Tomar 1mg al día.",
     warnings: "Puede causar efectos secundarios sexuales en un pequeño porcentaje de usuarios."
@@ -2071,7 +2070,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 32,
     presentation: "0.5mg x 30",
-    image: `https://picsum.photos/seed/${generateId(["Dutasteride", "Pharmacy", "0.5mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/DUTAMED05-550x550w.jpg`,
     ingredients: ["Dutasteride"],
     usage: "Tomar 0.5mg al día.",
     warnings: "Mayor riesgo de efectos secundarios que la finasterida."
@@ -2086,7 +2085,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 9,
     presentation: "100ml x 1",
-    image: `https://picsum.photos/seed/${generateId(["Ketoconazole", "Pharmacy", "100ml"])}/400/400`,
+    image: `https://www.farmaciatorrent.com/22569-large_default/ketoconazol-cinfa-2-gel-1-frasco-100-ml.jpg`,
     ingredients: ["Ketoconazole 2%"],
     usage: "Usar como champú 2-3 veces por semana.",
     warnings: "Solo para uso externo."
@@ -2101,7 +2100,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 39,
     presentation: "50mg x 25",
-    image: `https://picsum.photos/seed/${generateId(["Clomiphene", "Pharmacy", "50mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
     ingredients: ["Clomiphene Citrate"],
     usage: "Usar en PCT con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales."
@@ -2116,7 +2115,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 49,
     presentation: "1mg x 30",
-    image: `https://picsum.photos/seed/${generateId(["Arimidex", "Pharmacy", "1mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
     ingredients: ["Anastrozole"],
     usage: "0.5mg cada dos días según sea necesario.",
     warnings: "Ajustar dosis para no suprimir el estrógeno por completo."
@@ -2131,7 +2130,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 69,
     presentation: "25mg x 30",
-    image: `https://picsum.photos/seed/${generateId(["Exemestane", "Pharmacy", "25mg"])}/400/400`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
     ingredients: ["Exemestane"],
     usage: "12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, usar con precaución."
@@ -2147,7 +2146,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 18,
     presentation: "100mg x 7 flavours",
-    image: `https://picsum.photos/seed/${generateId(["Kamagra", "Pharmacy", "100mg"])}/400/400`,
+    image: `https://www.kamagra-shop.eu/wp-content/uploads/2020/07/kamagra-oral-jelly-100mg-1.jpg`,
     ingredients: ["Sildenafil Citrate"],
     usage: "Tomar un sobre 15-30 minutos antes de la actividad.",
     warnings: "No usar con nitratos."
@@ -2162,7 +2161,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 10,
     presentation: "100mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Sildenafil", "Pharmacy", "100mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/cenforce-100.jpg`,
     ingredients: ["Sildenafil Citrate"],
     usage: "Tomar una tableta 30-60 minutos antes de la actividad.",
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
@@ -2177,7 +2176,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 15,
     presentation: "150mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Sildenafil", "Pharmacy", "150mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/cenforce-150.jpg`,
     ingredients: ["Sildenafil Citrate"],
     usage: "Tomar una tableta 30-60 minutos antes de la actividad. No exceder la dosis.",
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
@@ -2192,7 +2191,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 20,
     presentation: "200mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Sildenafil", "Pharmacy", "200mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/cenforce-200.jpg`,
     ingredients: ["Sildenafil Citrate"],
     usage: "Tomar una tableta 30-60 minutos antes de la actividad. No exceder la dosis.",
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
@@ -2207,7 +2206,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 10,
     presentation: "20mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Tadalafil", "Pharmacy", "20mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/vidalista-20.jpg`,
     ingredients: ["Tadalafil"],
     usage: "Tomar una tableta 30-60 minutos antes de la actividad.",
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
@@ -2222,7 +2221,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 15,
     presentation: "40mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Tadalafil", "Pharmacy", "40mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/vidalista-40.jpg`,
     ingredients: ["Tadalafil"],
     usage: "Tomar una tableta 30-60 minutos antes de la actividad. No exceder dosis.",
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
@@ -2237,7 +2236,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 20,
     presentation: "60mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Tadalafil", "Pharmacy", "60mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/vidalista-60.jpg`,
     ingredients: ["Tadalafil"],
     usage: "Tomar una tableta 30-60 minutos antes de la actividad. No exceder dosis.",
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
@@ -2252,7 +2251,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 25,
     presentation: "80mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Tadalafil", "Pharmacy", "80mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/vidalista-80.jpg`,
     ingredients: ["Tadalafil"],
     usage: "Tomar una tableta 30-60 minutos antes de la actividad. No exceder dosis.",
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
@@ -2267,7 +2266,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 30,
     presentation: "60mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Dapoxetine", "Pharmacy", "60mg"])}/400/400`,
+    image: `https://www.gold-pharma.com/img/products/2070_poxet-60-dapoxetine-60mg.jpg`,
     ingredients: ["Dapoxetine"],
     usage: "Tomar 1-3 horas antes de la actividad.",
     warnings: "Consultar a un médico antes de usar."
@@ -2282,7 +2281,7 @@ export const products: Product[] = [
     lab: "Pharmacy",
     price: 32,
     presentation: "160mg x 10",
-    image: `https://picsum.photos/seed/${generateId(["Dapoxetine-Sildenafil", "Pharmacy", "160mg"])}/400/400`,
+    image: `https://www.reals-pharmacy.com/wp-content/uploads/2022/11/super-p-force.jpg`,
     ingredients: ["Sildenafil Citrate", "Dapoxetine"],
     usage: "Tomar 1-3 horas antes de la actividad.",
     warnings: "No usar con nitratos. Consultar a un médico."
