@@ -248,7 +248,7 @@ export const products: Product[] = [
     lab: "Master Medical",
     price: 37,
     presentation: "50 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
