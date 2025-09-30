@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 // FIX: Corrected import from 'react-router-dom' to resolve module export errors.
 import { useLocation } from 'react-router-dom';
@@ -58,7 +57,7 @@ const CatalogPage: React.FC = () => {
             variants.sort((a, b) => a.price - b.price);
             const baseProduct = variants[0];
             return {
-                groupId: baseProduct.name.toLowerCase().replace(/\s+/g, '-'),
+                groupId: baseProduct.name.toLowerCase().replace(/\s+/g, '-').replace(/[/.]/g, ''),
                 name: baseProduct.name,
                 shortDescription: baseProduct.shortDescription,
                 category: baseProduct.category,

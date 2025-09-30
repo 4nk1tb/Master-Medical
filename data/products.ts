@@ -10,10 +10,14 @@ const generateId = (parts: (string | number)[]): string => {
     .replace(/^-|-$/g, '');
 };
 
-export const products: Product[] = [
-  // Promos
+// Define a type for the raw product data, making 'form' optional for automatic determination.
+type ProductDefinition = Omit<Product, 'id' | 'form'> & {
+  form?: Form;
+};
+
+const productDefinitions: ProductDefinition[] = [
+  // Promos - Form is manually specified as they are mixed.
   {
-    id: generateId(["promo", "hgh-120iu-bacteriostatic-water"]),
     name: "HGH 120IU + Bacteriostatic Water",
     shortDescription: "Pack especial de HGH con agua bacteriostática.",
     description: "Promoción especial: pack completo de HGH 120IU (12IU x 10 viales) junto con 10ml de agua bacteriostática para su reconstitución. Todo lo que necesitas para tu ciclo.",
@@ -28,7 +32,6 @@ export const products: Product[] = [
     warnings: "Conservar en frío una vez reconstituido."
   },
   {
-    id: generateId(["promo", "clenbuterol-nebivolol"]),
     name: "Clenbuterol + Nebivolol",
     shortDescription: "Combinación para quema de grasa con protección cardiovascular.",
     description: "Pack promocional que incluye Clenbuterol para una efectiva quema de grasa y Nebivolol para ayudar a controlar la presión arterial y el ritmo cardíaco durante el uso.",
@@ -42,14 +45,12 @@ export const products: Product[] = [
     usage: "Empezar con dosis bajas de Clenbuterol (20-40mcg). Consultar a un especialista para el uso combinado.",
     warnings: "No apto para personas con problemas cardiovasculares preexistentes."
   },
-  // Master Medical (MM) Inyectables
+  // Master Medical (MM) Inyectables & Orales - Form will be determined automatically
   {
-    id: generateId(["Testosterone Enanthate", "Master Medical", "250 mg/ml x 10"]),
     name: "Testosterone Enanthate",
     shortDescription: "Base para ciclos de volumen y fuerza.",
     description: "El enantato de testosterona es un éster de acción prolongada, fundamental para ganancias de masa muscular, fuerza y libido.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 39,
     presentation: "250 mg/ml x 10",
@@ -59,12 +60,10 @@ export const products: Product[] = [
     warnings: "Requiere control de estrógenos y terapia post-ciclo."
   },
   {
-    id: generateId(["Testosterone Cypionate", "Master Medical", "250 mg/ml x 10"]),
     name: "Testosterone Cypionate",
     shortDescription: "Aumento de masa muscular y fuerza.",
     description: "El cipionato de testosterona es una forma de acción prolongada de la testosterona, ideal para ciclos de volumen y fuerza.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 39,
     presentation: "250 mg/ml x 10",
@@ -74,12 +73,10 @@ export const products: Product[] = [
     warnings: "Requiere terapia post-ciclo."
   },
   {
-    id: generateId(["Testosterone Sustanon", "Master Medical", "250 mg/ml x 10"]),
     name: "Testosterone Sustanon",
     shortDescription: "Mezcla de testosteronas para efecto rápido y duradero.",
     description: "Sustanon 250 es una mezcla de cuatro ésteres de testosterona que proporciona una liberación sostenida en el tiempo.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 40,
     presentation: "250 mg/ml x 10",
@@ -89,12 +86,10 @@ export const products: Product[] = [
     warnings: "Puede causar fluctuaciones hormonales."
   },
   {
-    id: generateId(["Testosterone Undecanoate", "Master Medical", "250 mg/ml x 10"]),
     name: "Testosterone Undecanoate",
     shortDescription: "Éster de vida media muy larga para terapia estable.",
     description: "El undecanoato de testosterona tiene una vida media extremadamente larga, lo que permite inyecciones muy poco frecuentes.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 39,
     presentation: "250 mg/ml x 10",
@@ -104,12 +99,10 @@ export const products: Product[] = [
     warnings: "Los efectos secundarios pueden ser prolongados."
   },
   {
-    id: generateId(["Testosterone Propionate", "Master Medical", "100 mg/ml x 10"]),
     name: "Testosterone Propionate",
     shortDescription: "Acción rápida para ciclos de corte y definición.",
     description: "El propionato de testosterona es un éster de acción rápida que ofrece un control preciso sobre los niveles hormonales.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 29,
     presentation: "100 mg/ml x 10",
@@ -119,12 +112,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones frecuentes."
   },
   {
-    id: generateId(["Primobolan Enanthate", "Master Medical", "100 mg/ml x 10"]),
     name: "Primobolan Enanthate",
     shortDescription: "Masa muscular magra y de calidad.",
     description: "Primobolan (Methenolone Enanthate) es famoso por construir masa muscular de calidad con mínima retención de líquidos.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 79,
     presentation: "100 mg/ml x 10",
@@ -134,12 +125,10 @@ export const products: Product[] = [
     warnings: "Considerado uno de los esteroides más seguros."
   },
   {
-    id: generateId(["Primobolan Enanthate", "Master Medical", "200 mg/ml x 10"]),
     name: "Primobolan Enanthate",
     shortDescription: "Dosis concentrada para ganancias de calidad.",
     description: "Versión de alta concentración de Primobolan para una dosificación más conveniente y ganancias de masa magra.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 149,
     presentation: "200 mg/ml x 10",
@@ -149,12 +138,10 @@ export const products: Product[] = [
     warnings: "Dosis más altas requieren un monitoreo cuidadoso."
   },
   {
-    id: generateId(["Masteron Enanthate", "Master Medical", "200 mg/ml x 10"]),
     name: "Masteron Enanthate",
     shortDescription: "Dureza muscular y efecto anti-estrogénico.",
     description: "Masteron (Drostanolone Enanthate) proporciona un aspecto muscular duro y denso, ideal para las últimas semanas de preparación.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 62,
     presentation: "200 mg/ml x 10",
@@ -164,12 +151,10 @@ export const products: Product[] = [
     warnings: "Puede acelerar la caída del cabello en individuos predispuestos."
   },
   {
-    id: generateId(["Masteron Propionate", "Master Medical", "100 mg/ml x 10"]),
     name: "Masteron Propionate",
     shortDescription: "Acción rápida para máxima dureza y definición.",
     description: "La versión de propionato de Masteron actúa rápidamente, ideal para ciclos cortos o fases finales de un ciclo de corte.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 49,
     presentation: "100 mg/ml x 10",
@@ -179,12 +164,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones frecuentes."
   },
   {
-    id: generateId(["Nandrolone (DECA)", "Master Medical", "300 mg/ml x 10"]),
     name: "Nandrolone (DECA)",
     shortDescription: "Volumen muscular y alivio articular.",
     description: "Conocido como 'Deca', este compuesto es un pilar en ciclos de volumen por sus propiedades para construir masa y lubricar articulaciones.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 44,
     presentation: "300 mg/ml x 10",
@@ -194,12 +177,10 @@ export const products: Product[] = [
     warnings: "Usar siempre con una base de testosterona."
   },
   {
-    id: generateId(["Nandrolone (NPP)", "Master Medical", "100 mg/ml x 10"]),
     name: "Nandrolone (NPP)",
     shortDescription: "Acción rápida para masa magra.",
     description: "NPP es la versión de acción corta de la nandrolona. Permite ganancias de masa magra con menos retención de líquidos.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 32,
     presentation: "100 mg/ml x 10",
@@ -209,12 +190,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones más frecuentes que el Decanoate."
   },
   {
-    id: generateId(["Trenbolone Enanthate", "Master Medical", "200 mg/ml x 10"]),
     name: "Trenbolone Enanthate",
     shortDescription: "Ganancias extremas de fuerza y recomposición corporal.",
     description: "La trembolona es uno de los esteroides más potentes. El éster enantato proporciona una liberación sostenida. Solo para usuarios avanzados.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 65,
     presentation: "200 mg/ml x 10",
@@ -224,12 +203,10 @@ export const products: Product[] = [
     warnings: "Potentes efectos secundarios. No apto para principiantes."
   },
   {
-    id: generateId(["Trenbolone Acetate", "Master Medical", "100 mg/ml x 10"]),
     name: "Trenbolone Acetate",
     shortDescription: "Resultados rápidos y drásticos en dureza muscular.",
     description: "El acetato de trembolona es de acción rápida y muy potente. Ideal para ciclos de corte avanzados para una máxima definición.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 52,
     presentation: "100 mg/ml x 10",
@@ -239,27 +216,23 @@ export const products: Product[] = [
     warnings: "Potentes efectos secundarios. No apto para principiantes."
   },
   {
-    id: generateId(["Winstrol (Stanozolol)", "Master Medical", "50 mg/ml x 10"]),
     name: "Winstrol (Stanozolol)",
     shortDescription: "Aspecto seco y vascularizado, ideal para corte.",
     description: "La versión inyectable de Winstrol (estanozolol) es popular para ciclos de corte para lograr un físico duro y definido sin retención de agua.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 37,
     presentation: "50 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
   },
   {
-    id: generateId(["Boldenone", "Master Medical", "300 mg/ml x 10"]),
     name: "Boldenone",
     shortDescription: "Ganancias de masa magra y aumento del apetito.",
     description: "La boldenona (Equipoise) es conocida por promover ganancias de masa muscular lentas pero de calidad, y por aumentar significativamente el apetito.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 45,
     presentation: "300 mg/ml x 10",
@@ -269,12 +242,10 @@ export const products: Product[] = [
     warnings: "Puede aumentar los glóbulos rojos; se recomienda monitoreo."
   },
   {
-    id: generateId(["Trestolone", "Master Medical", "100 mg/ml x 10"]),
     name: "Trestolone",
     shortDescription: "Potente para ganancias de masa y fuerza.",
     description: "La Trestolona (MENT) es un esteroide muy potente, más anabólico que la testosterona, para ganancias rápidas de masa y fuerza. Solo para usuarios muy avanzados.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 109,
     presentation: "100 mg/ml x 10",
@@ -284,12 +255,10 @@ export const products: Product[] = [
     warnings: "Potente y con alta tasa de aromatización. No para principiantes."
   },
   {
-    id: generateId(["Bacteriostatic Water", "Master Medical", "10ml"]),
     name: "Bacteriostatic Water",
     shortDescription: "Agua estéril para reconstitución de péptidos.",
     description: "Agua bacteriostática estéril que contiene un 0.9% de alcohol bencílico como conservante. Esencial para reconstituir de forma segura péptidos y HGH.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Master Medical",
     price: 9,
     presentation: "10ml",
@@ -298,14 +267,11 @@ export const products: Product[] = [
     usage: "Utilizar la cantidad necesaria para reconstituir el producto deseado.",
     warnings: "Desechar el vial después de 28 días de uso."
   },
-  // Master Medical (MM) Orales
   {
-    id: generateId(["Clenbuterol", "Master Medical", "40mcg x 100"]),
     name: "Clenbuterol",
     shortDescription: "Potente quemador de grasa y termogénico.",
     description: "El clenbuterol es un potente termogénico que aumenta la tasa metabólica del cuerpo y promueve la quema de grasa.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 34,
     presentation: "40mcg x 100",
@@ -315,12 +281,10 @@ export const products: Product[] = [
     warnings: "Puede causar nerviosismo y aumento del ritmo cardíaco."
   },
   {
-    id: generateId(["Salbutamol", "Master Medical", "20mg x 100"]),
     name: "Salbutamol",
     shortDescription: "Agente para la pérdida de grasa y broncodilatador.",
     description: "Similar al Clenbuterol pero con una vida media más corta, el Salbutamol es un agonista beta-2 utilizado para la pérdida de grasa y mejora del rendimiento.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 39,
     presentation: "20mg x 100",
@@ -330,12 +294,10 @@ export const products: Product[] = [
     warnings: "Controlar la frecuencia cardíaca y la presión arterial."
   },
   {
-    id: generateId(["SLUPP-332", "Master Medical", "250mcg x 100"]),
     name: "SLUPP-332",
     shortDescription: "Compuesto experimental para el crecimiento muscular.",
     description: "SLUPP-332 es un compuesto de investigación que actúa como un modulador selectivo del receptor de andrógenos no esteroideo, con potencial para el crecimiento muscular.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 79,
     presentation: "250mcg x 100",
@@ -345,12 +307,10 @@ export const products: Product[] = [
     warnings: "Compuesto experimental con efectos a largo plazo desconocidos."
   },
   {
-    id: generateId(["T3", "Master Medical", "25mcg x 100"]),
     name: "T3",
     shortDescription: "Hormona tiroidea para acelerar el metabolismo.",
     description: "La liotironina sódica (T3) es una hormona tiroidea que aumenta drásticamente la tasa metabólica, llevando a una rápida pérdida de grasa.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 36,
     presentation: "25mcg x 100",
@@ -360,12 +320,10 @@ export const products: Product[] = [
     warnings: "El uso incorrecto puede afectar la función tiroidea. Requiere un uso cuidadoso."
   },
   {
-    id: generateId(["Oxandrolone (Anavar)", "Master Medical", "10mg x 100"]),
     name: "Oxandrolone (Anavar)",
     shortDescription: "Corte, dureza muscular y fuerza con bajos efectos secundarios.",
     description: "Anavar (Oxandrolona) es un esteroide oral suave conocido por su capacidad para promover la fuerza y la pérdida de grasa. Popular tanto en hombres como en mujeres.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 59,
     presentation: "10mg x 100",
@@ -375,27 +333,23 @@ export const products: Product[] = [
     warnings: "Baja toxicidad hepática en comparación con otros orales."
   },
   {
-    id: generateId(["Winstrol (Stanozolol)", "Master Medical", "10mg x 100"]),
     name: "Winstrol (Stanozolol)",
     shortDescription: "Ideal para ciclos de corte, dureza y vascularización.",
     description: "Winstrol (Estanozolol) oral es excelente para lograr un físico seco y duro. Aumenta la fuerza sin un gran aumento de peso.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 32,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
   },
   {
-    id: generateId(["Proviron", "Master Medical", "25mg x 100"]),
     name: "Proviron",
     shortDescription: "Anti-estrógeno suave y mejora de la libido.",
     description: "Proviron (Mesterolona) se utiliza para reducir los efectos secundarios estrogénicos, aumentar la testosterona libre y mejorar la dureza muscular y la libido.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 62,
     presentation: "25mg x 100",
@@ -405,12 +359,10 @@ export const products: Product[] = [
     warnings: "Androgénico, puede causar caída del cabello o acné."
   },
   {
-    id: generateId(["Anadrol (Oxymetholone)", "Master Medical", "50mg x 100"]),
     name: "Anadrol (Oxymetholone)",
     shortDescription: "Ganancias extremas de fuerza y masa en poco tiempo.",
     description: "Anadrol es uno de los esteroides orales más potentes para ganancias masivas de volumen y fuerza. Actúa muy rápidamente.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 61,
     presentation: "50mg x 100",
@@ -420,12 +372,10 @@ export const products: Product[] = [
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
   },
   {
-    id: generateId(["Dianabol", "Master Medical", "10mg x 100"]),
     name: "Dianabol",
     shortDescription: "Ganancias rápidas de volumen y potencia.",
     description: "Dianabol (Metandienona) es un clásico para ganancias rápidas de masa y fuerza. Aumenta la síntesis de proteínas a un ritmo muy elevado.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 32,
     presentation: "10mg x 100",
@@ -435,12 +385,10 @@ export const products: Product[] = [
     warnings: "Hepatotóxico. Causa retención de líquidos."
   },
   {
-    id: generateId(["Superdrol", "Master Medical", "10mg x 100"]),
     name: "Superdrol",
     shortDescription: "Ganancias de masa muscular seca y densa.",
     description: "Superdrol (Metildrostanolona) es un potente esteroide oral que promueve ganancias rápidas de músculo seco y denso, con un notable aumento de la fuerza.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 87,
     presentation: "10mg x 100",
@@ -450,12 +398,10 @@ export const products: Product[] = [
     warnings: "Altamente hepatotóxico. Requiere un soporte hepático robusto."
   },
   {
-    id: generateId(["Turinabol", "Master Medical", "10mg x 100"]),
     name: "Turinabol",
     shortDescription: "Ganancias de calidad con menos efectos secundarios.",
     description: "Turinabol ofrece ganancias de masa magra y fuerza de calidad, con un menor riesgo de efectos secundarios estrogénicos como la retención de agua.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 41,
     presentation: "10mg x 100",
@@ -465,12 +411,10 @@ export const products: Product[] = [
     warnings: "Hepatotóxico, aunque menos que otros orales."
   },
   {
-    id: generateId(["Ibutamoren (MK677)", "Master Medical", "10mg x 100"]),
     name: "Ibutamoren (MK677)",
     shortDescription: "Aumenta la hormona del crecimiento y el apetito.",
     description: "Ibutamoren (MK-677) es un secretagogo de la hormona del crecimiento que aumenta los niveles de GH e IGF-1, mejorando la recuperación, el sueño y el apetito.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 77,
     presentation: "10mg x 100",
@@ -480,12 +424,10 @@ export const products: Product[] = [
     warnings: "Puede causar letargo y aumento del apetito."
   },
   {
-    id: generateId(["Ostarine (MK2866)", "Master Medical", "10mg x 100"]),
     name: "Ostarine (MK2866)",
     shortDescription: "Ganancias de masa magra y prevención de catabolismo.",
     description: "Ostarine (MK-2866) es un SARM popular para ciclos de recomposición y corte. Ayuda a construir masa muscular magra y prevenir la pérdida muscular.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 69,
     presentation: "10mg x 100",
@@ -495,12 +437,10 @@ export const products: Product[] = [
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
   },
   {
-    id: generateId(["Arimidex (anastrozol)", "Master Medical", "1mg x 100"]),
     name: "Arimidex (anastrozol)",
     shortDescription: "Control de estrógeno y prevención de ginecomastia.",
     description: "Arimidex (Anastrozol) es un inhibidor de la aromatasa que se utiliza para controlar los niveles de estrógeno durante un ciclo de esteroides.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 57,
     presentation: "1mg x 100",
@@ -510,12 +450,10 @@ export const products: Product[] = [
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
   },
   {
-    id: generateId(["Exemestano (aromalyn)", "Master Medical", "25mg x 50"]),
     name: "Exemestano (aromalyn)",
     shortDescription: "Inhibidor de aromatasa suicida para control de estrógeno.",
     description: "El exemestano es un inhibidor de la aromatasa 'suicida', lo que significa que desactiva permanentemente la enzima aromatasa. Muy efectivo para el control del estrógeno.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 69,
     presentation: "25mg x 50",
@@ -525,12 +463,10 @@ export const products: Product[] = [
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
   },
   {
-    id: generateId(["Clomiphene", "Master Medical", "50mg x 100"]),
     name: "Clomiphene",
     shortDescription: "Estimulador de testosterona para Terapia Post-Ciclo (PCT).",
     description: "El clomifeno (Clomid) es un SERM utilizado en la terapia post-ciclo para estimular la producción natural de testosterona bloqueando el estrógeno en el hipotálamo.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 54,
     presentation: "50mg x 100",
@@ -540,12 +476,10 @@ export const products: Product[] = [
     warnings: "Puede causar efectos secundarios visuales o emocionales."
   },
   {
-    id: generateId(["Enclomiphene", "Master Medical", "12.5mg x 100"]),
     name: "Enclomiphene",
     shortDescription: "Isómero puro para una Terapia Post-Ciclo (PCT) más efectiva.",
     description: "El enclomifeno es el isómero más activo del clomifeno, lo que permite una estimulación de testosterona más efectiva con potencialmente menos efectos secundarios.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Master Medical",
     price: 69,
     presentation: "12.5mg x 100",
@@ -554,14 +488,12 @@ export const products: Product[] = [
     usage: "Usar en PCT con dosis de 12.5-25mg al día.",
     warnings: "Considerado una opción superior al clomifeno estándar."
   },
-  // Deus Inyectables
+  // Deus Inyectables & Orales
   {
-    id: generateId(["Testosterone Enanthate", "Deus", "250 mg/ml x 10"]),
     name: "Testosterone Enanthate",
     shortDescription: "Base para ciclos de volumen y fuerza.",
     description: "El enantato de testosterona es un éster de acción prolongada, fundamental para ganancias de masa muscular, fuerza y libido.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 32,
     presentation: "250 mg/ml x 10",
@@ -571,12 +503,10 @@ export const products: Product[] = [
     warnings: "Requiere control de estrógenos y terapia post-ciclo."
   },
   {
-    id: generateId(["Testosterone Cypionate", "Deus", "250 mg/ml x 10"]),
     name: "Testosterone Cypionate",
     shortDescription: "Aumento de masa muscular y fuerza.",
     description: "El cipionato de testosterona es una forma de acción prolongada de la testosterona, ideal para ciclos de volumen y fuerza.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 32,
     presentation: "250 mg/ml x 10",
@@ -586,12 +516,10 @@ export const products: Product[] = [
     warnings: "Requiere terapia post-ciclo."
   },
   {
-    id: generateId(["Testosterone Sustanon", "Deus", "250 mg/ml x 10"]),
     name: "Testosterone Sustanon",
     shortDescription: "Mezcla de testosteronas para efecto rápido y duradero.",
     description: "Sustanon 250 es una mezcla de cuatro ésteres de testosterona que proporciona una liberación sostenida en el tiempo.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 34,
     presentation: "250 mg/ml x 10",
@@ -601,12 +529,10 @@ export const products: Product[] = [
     warnings: "Puede causar fluctuaciones hormonales."
   },
   {
-    id: generateId(["Testosterone Undecanoate", "Deus", "250 mg/ml x 10"]),
     name: "Testosterone Undecanoate",
     shortDescription: "Éster de vida media muy larga para terapia estable.",
     description: "El undecanoato de testosterona tiene una vida media extremadamente larga, lo que permite inyecciones muy poco frecuentes.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 32,
     presentation: "250 mg/ml x 10",
@@ -616,12 +542,10 @@ export const products: Product[] = [
     warnings: "Los efectos secundarios pueden ser prolongados."
   },
   {
-    id: generateId(["Testosterone Propionate", "Deus", "100 mg/ml x 10"]),
     name: "Testosterone Propionate",
     shortDescription: "Acción rápida para ciclos de corte y definición.",
     description: "El propionato de testosterona es un éster de acción rápida que ofrece un control preciso sobre los niveles hormonales.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 29,
     presentation: "100 mg/ml x 10",
@@ -631,12 +555,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones frecuentes."
   },
   {
-    id: generateId(["Primobolan Enanthate", "Deus", "100 mg/ml x 10"]),
     name: "Primobolan Enanthate",
     shortDescription: "Masa muscular magra y de calidad.",
     description: "Primobolan (Methenolone Enanthate) es famoso por construir masa muscular de calidad con mínima retención de líquidos.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 62,
     presentation: "100 mg/ml x 10",
@@ -646,12 +568,10 @@ export const products: Product[] = [
     warnings: "Considerado uno de los esteroides más seguros."
   },
   {
-    id: generateId(["Masteron Enanthate", "Deus", "200 mg/ml x 10"]),
     name: "Masteron Enanthate",
     shortDescription: "Dureza muscular y efecto anti-estrogénico.",
     description: "Masteron (Drostanolone Enanthate) proporciona un aspecto muscular duro y denso, ideal para las últimas semanas de preparación.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 55,
     presentation: "200 mg/ml x 10",
@@ -661,12 +581,10 @@ export const products: Product[] = [
     warnings: "Puede acelerar la caída del cabello en individuos predispuestos."
   },
   {
-    id: generateId(["Masteron Propionate", "Deus", "100 mg/ml x 10"]),
     name: "Masteron Propionate",
     shortDescription: "Acción rápida para máxima dureza y definición.",
     description: "La versión de propionato de Masteron actúa rápidamente, ideal para ciclos cortos o fases finales de un ciclo de corte.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 42,
     presentation: "100 mg/ml x 10",
@@ -676,12 +594,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones frecuentes."
   },
   {
-    id: generateId(["Nandrolone (DECA)", "Deus", "250 mg/ml x 10"]),
     name: "Nandrolone (DECA)",
     shortDescription: "Volumen muscular y alivio articular.",
     description: "Conocido como 'Deca', este compuesto es un pilar en ciclos de volumen por sus propiedades para construir masa y lubricar articulaciones.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 40,
     presentation: "250 mg/ml x 10",
@@ -691,12 +607,10 @@ export const products: Product[] = [
     warnings: "Usar siempre con una base de testosterona."
   },
   {
-    id: generateId(["Nandrolone (NPP)", "Deus", "100 mg/ml x 10"]),
     name: "Nandrolone (NPP)",
     shortDescription: "Acción rápida para masa magra.",
     description: "NPP es la versión de acción corta de la nandrolona. Permite ganancias de masa magra con menos retención de líquidos.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 33,
     presentation: "100 mg/ml x 10",
@@ -706,12 +620,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones más frecuentes que el Decanoate."
   },
   {
-    id: generateId(["Trenbolone Enanthate", "Deus", "200 mg/ml x 10"]),
     name: "Trenbolone Enanthate",
     shortDescription: "Ganancias extremas de fuerza y recomposición corporal.",
     description: "La trembolona es uno de los esteroides más potentes. El éster enantato proporciona una liberación sostenida. Solo para usuarios avanzados.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 52,
     presentation: "200 mg/ml x 10",
@@ -721,12 +633,10 @@ export const products: Product[] = [
     warnings: "Potentes efectos secundarios. No apto para principiantes."
   },
   {
-    id: generateId(["Trenbolone Acetate", "Deus", "100 mg/ml x 10"]),
     name: "Trenbolone Acetate",
     shortDescription: "Resultados rápidos y drásticos en dureza muscular.",
     description: "El acetato de trembolona es de acción rápida y muy potente. Ideal para ciclos de corte avanzados para una máxima definición.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 43,
     presentation: "100 mg/ml x 10",
@@ -736,27 +646,23 @@ export const products: Product[] = [
     warnings: "Potentes efectos secundarios. No apto para principiantes."
   },
   {
-    id: generateId(["Winstrol (Stanozolol)", "Deus", "50 mg/ml x 10"]),
     name: "Winstrol (Stanozolol)",
     shortDescription: "Aspecto seco y vascularizado, ideal para corte.",
     description: "La versión inyectable de Winstrol (estanozolol) es popular para ciclos de corte para lograr un físico duro y definido sin retención de agua.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 35,
     presentation: "50 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
   },
   {
-    id: generateId(["Boldenone", "Deus", "250 mg/ml x 10"]),
     name: "Boldenone",
     shortDescription: "Ganancias de masa magra y aumento del apetito.",
     description: "La boldenona (Equipoise) es conocida por promover ganancias de masa muscular lentas pero de calidad, y por aumentar significativamente el apetito.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 40,
     presentation: "250 mg/ml x 10",
@@ -766,12 +672,10 @@ export const products: Product[] = [
     warnings: "Puede aumentar los glóbulos rojos; se recomienda monitoreo."
   },
   {
-    id: generateId(["Trestolone", "Deus", "100 mg/ml x 10"]),
     name: "Trestolone",
     shortDescription: "Potente para ganancias de masa y fuerza.",
     description: "La Trestolona (MENT) es un esteroide muy potente, más anabólico que la testosterona, para ganancias rápidas de masa y fuerza. Solo para usuarios muy avanzados.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 102,
     presentation: "100 mg/ml x 10",
@@ -781,12 +685,10 @@ export const products: Product[] = [
     warnings: "Potente y con alta tasa de aromatización. No para principiantes."
   },
   {
-    id: generateId(["Bacteriostatic Water", "Deus", "10ml"]),
     name: "Bacteriostatic Water",
     shortDescription: "Agua estéril para reconstitución de péptidos.",
     description: "Agua bacteriostática estéril que contiene un 0.9% de alcohol bencílico como conservante. Esencial para reconstituir de forma segura péptidos y HGH.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Deus",
     price: 12,
     presentation: "10ml",
@@ -795,14 +697,11 @@ export const products: Product[] = [
     usage: "Utilizar la cantidad necesaria para reconstituir el producto deseado.",
     warnings: "Desechar el vial después de 28 días de uso."
   },
-  // Deus Orales
   {
-    id: generateId(["Clenbuterol", "Deus", "40mcg x 50"]),
     name: "Clenbuterol",
     shortDescription: "Potente quemador de grasa y termogénico.",
     description: "El clenbuterol es un potente termogénico que aumenta la tasa metabólica del cuerpo y promueve la quema de grasa.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 15,
     presentation: "40mcg x 50",
@@ -812,12 +711,10 @@ export const products: Product[] = [
     warnings: "Puede causar nerviosismo y aumento del ritmo cardíaco."
   },
   {
-    id: generateId(["T3", "Deus", "25mcg x 50"]),
     name: "T3",
     shortDescription: "Hormona tiroidea para acelerar el metabolismo.",
     description: "La liotironina sódica (T3) es una hormona tiroidea que aumenta drásticamente la tasa metabólica, llevando a una rápida pérdida de grasa.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 15,
     presentation: "25mcg x 50",
@@ -827,12 +724,10 @@ export const products: Product[] = [
     warnings: "El uso incorrecto puede afectar la función tiroidea. Requiere un uso cuidadoso."
   },
   {
-    id: generateId(["Oxandrolone (Anavar)", "Deus", "10mg x 50"]),
     name: "Oxandrolone (Anavar)",
     shortDescription: "Corte, dureza muscular y fuerza con bajos efectos secundarios.",
     description: "Anavar (Oxandrolona) es un esteroide oral suave conocido por su capacidad para promover la fuerza y la pérdida de grasa. Popular tanto en hombres como en mujeres.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 25,
     presentation: "10mg x 50",
@@ -842,27 +737,23 @@ export const products: Product[] = [
     warnings: "Baja toxicidad hepática en comparación con otros orales."
   },
   {
-    id: generateId(["Winstrol (Stanozolol)", "Deus", "10mg x 50"]),
     name: "Winstrol (Stanozolol)",
     shortDescription: "Ideal para ciclos de corte, dureza y vascularización.",
     description: "Winstrol (Estanozolol) oral es excelente para lograr un físico seco y duro. Aumenta la fuerza sin un gran aumento de peso.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 15,
     presentation: "10mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
   },
   {
-    id: generateId(["Proviron", "Deus", "25mg x 50"]),
     name: "Proviron",
     shortDescription: "Anti-estrógeno suave y mejora de la libido.",
     description: "Proviron (Mesterolona) se utiliza para reducir los efectos secundarios estrogénicos, aumentar la testosterona libre y mejorar la dureza muscular y la libido.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 25,
     presentation: "25mg x 50",
@@ -872,12 +763,10 @@ export const products: Product[] = [
     warnings: "Androgénico, puede causar caída del cabello o acné."
   },
   {
-    id: generateId(["Anadrol (Oxymetholone)", "Deus", "50mg x 50"]),
     name: "Anadrol (Oxymetholone)",
     shortDescription: "Ganancias extremas de fuerza y masa en poco tiempo.",
     description: "Anadrol es uno de los esteroides orales más potentes para ganancias masivas de volumen y fuerza. Actúa muy rápidamente.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 29,
     presentation: "50mg x 50",
@@ -887,12 +776,10 @@ export const products: Product[] = [
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
   },
   {
-    id: generateId(["Dianabol", "Deus", "10mg x 50"]),
     name: "Dianabol",
     shortDescription: "Ganancias rápidas de volumen y potencia.",
     description: "Dianabol (Metandienona) es un clásico para ganancias rápidas de masa y fuerza. Aumenta la síntesis de proteínas a un ritmo muy elevado.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 15,
     presentation: "10mg x 50",
@@ -902,12 +789,10 @@ export const products: Product[] = [
     warnings: "Hepatotóxico. Causa retención de líquidos."
   },
   {
-    id: generateId(["Superdrol", "Deus", "10mg x 50"]),
     name: "Superdrol",
     shortDescription: "Ganancias de masa muscular seca y densa.",
     description: "Superdrol (Metildrostanolona) es un potente esteroide oral que promueve ganancias rápidas de músculo seco y denso, con un notable aumento de la fuerza.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 44,
     presentation: "10mg x 50",
@@ -917,12 +802,10 @@ export const products: Product[] = [
     warnings: "Altamente hepatotóxico. Requiere un soporte hepático robusto."
   },
   {
-    id: generateId(["Turinabol", "Deus", "10mg x 50"]),
     name: "Turinabol",
     shortDescription: "Ganancias de calidad con menos efectos secundarios.",
     description: "Turinabol ofrece ganancias de masa magra y fuerza de calidad, con un menor riesgo de efectos secundarios estrogénicos como la retención de agua.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 21,
     presentation: "10mg x 50",
@@ -932,12 +815,10 @@ export const products: Product[] = [
     warnings: "Hepatotóxico, aunque menos que otros orales."
   },
   {
-    id: generateId(["Ibutamoren (MK677)", "Deus", "10mg x 50"]),
     name: "Ibutamoren (MK677)",
     shortDescription: "Aumenta la hormona del crecimiento y el apetito.",
     description: "Ibutamoren (MK-677) es un secretagogo de la hormona del crecimiento que aumenta los niveles de GH e IGF-1, mejorando la recuperación, el sueño y el apetito.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 43,
     presentation: "10mg x 50",
@@ -947,12 +828,10 @@ export const products: Product[] = [
     warnings: "Puede causar letargo y aumento del apetito."
   },
   {
-    id: generateId(["Ostarine (MK2866)", "Deus", "10mg x 50"]),
     name: "Ostarine (MK2866)",
     shortDescription: "Ganancias de masa magra y prevención de catabolismo.",
     description: "Ostarine (MK-2866) es un SARM popular para ciclos de recomposición y corte. Ayuda a construir masa muscular magra y prevenir la pérdida muscular.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 37,
     presentation: "10mg x 50",
@@ -962,12 +841,10 @@ export const products: Product[] = [
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
   },
   {
-    id: generateId(["Arimidex (anastrozol)", "Deus", "1mg x 50"]),
     name: "Arimidex (anastrozol)",
     shortDescription: "Control de estrógeno y prevención de ginecomastia.",
     description: "Arimidex (Anastrozol) es un inhibidor de la aromatasa que se utiliza para controlar los niveles de estrógeno durante un ciclo de esteroides.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 31,
     presentation: "1mg x 50",
@@ -977,12 +854,10 @@ export const products: Product[] = [
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
   },
   {
-    id: generateId(["Exemestano (aromalyn)", "Deus", "25mg x 25"]),
     name: "Exemestano (aromalyn)",
     shortDescription: "Inhibidor de aromatasa suicida para control de estrógeno.",
     description: "El exemestano es un inhibidor de la aromatasa 'suicida', lo que significa que desactiva permanentemente la enzima aromatasa. Muy efectivo para el control del estrógeno.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 32,
     presentation: "25mg x 25",
@@ -992,12 +867,10 @@ export const products: Product[] = [
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
   },
   {
-    id: generateId(["Clomiphene", "Deus", "50mg x 50"]),
     name: "Clomiphene",
     shortDescription: "Estimulador de testosterona para Terapia Post-Ciclo (PCT).",
     description: "El clomifeno (Clomid) es un SERM utilizado en la terapia post-ciclo para estimular la producción natural de testosterona bloqueando el estrógeno en el hipotálamo.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 24,
     presentation: "50mg x 50",
@@ -1007,12 +880,10 @@ export const products: Product[] = [
     warnings: "Puede causar efectos secundarios visuales o emocionales."
   },
   {
-    id: generateId(["Enclomiphene", "Deus", "25mg x 50"]),
     name: "Enclomiphene",
     shortDescription: "Isómero puro para una Terapia Post-Ciclo (PCT) más efectiva.",
     description: "El enclomifeno es el isómero más activo del clomifeno, lo que permite una estimulación de testosterona más efectiva con potencialmente menos efectos secundarios.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Deus",
     price: 65,
     presentation: "25mg x 50",
@@ -1021,14 +892,12 @@ export const products: Product[] = [
     usage: "Usar en PCT con dosis de 12.5-25mg al día.",
     warnings: "Considerado una opción superior al clomifeno estándar."
   },
-  // Driada Inyectables
+  // Driada Inyectables & Orales
   {
-    id: generateId(["Testosterone Enanthate", "Driada", "250 mg/ml x 10"]),
     name: "Testosterone Enanthate",
     shortDescription: "Base para ciclos de volumen y fuerza.",
     description: "El enantato de testosterona es un éster de acción prolongada, fundamental para ganancias de masa muscular, fuerza y libido.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 37,
     presentation: "250 mg/ml x 10",
@@ -1038,12 +907,10 @@ export const products: Product[] = [
     warnings: "Requiere control de estrógenos y terapia post-ciclo."
   },
   {
-    id: generateId(["Testosterone Cypionate", "Driada", "250 mg/ml x 10"]),
     name: "Testosterone Cypionate",
     shortDescription: "Aumento de masa muscular y fuerza.",
     description: "El cipionato de testosterona es una forma de acción prolongada de la testosterona, ideal para ciclos de volumen y fuerza.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 37,
     presentation: "250 mg/ml x 10",
@@ -1053,12 +920,10 @@ export const products: Product[] = [
     warnings: "Requiere terapia post-ciclo."
   },
   {
-    id: generateId(["Testosterone Sustanon", "Driada", "250 mg/ml x 10"]),
     name: "Testosterone Sustanon",
     shortDescription: "Mezcla de testosteronas para efecto rápido y duradero.",
     description: "Sustanon 250 es una mezcla de cuatro ésteres de testosterona que proporciona una liberación sostenida en el tiempo.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 38,
     presentation: "250 mg/ml x 10",
@@ -1068,12 +933,10 @@ export const products: Product[] = [
     warnings: "Puede causar fluctuaciones hormonales."
   },
   {
-    id: generateId(["Testosterone Undecanoate", "Driada", "250 mg/ml x 10"]),
     name: "Testosterone Undecanoate",
     shortDescription: "Éster de vida media muy larga para terapia estable.",
     description: "El undecanoato de testosterona tiene una vida media extremadamente larga, lo que permite inyecciones muy poco frecuentes.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 32,
     presentation: "250 mg/ml x 10",
@@ -1083,12 +946,10 @@ export const products: Product[] = [
     warnings: "Los efectos secundarios pueden ser prolongados."
   },
   {
-    id: generateId(["Testosterone Propionate", "Driada", "100 mg/ml x 10"]),
     name: "Testosterone Propionate",
     shortDescription: "Acción rápida para ciclos de corte y definición.",
     description: "El propionato de testosterona es un éster de acción rápida que ofrece un control preciso sobre los niveles hormonales.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 30,
     presentation: "100 mg/ml x 10",
@@ -1098,12 +959,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones frecuentes."
   },
   {
-    id: generateId(["Primobolan Enanthate", "Driada", "100 mg/ml x 10"]),
     name: "Primobolan Enanthate",
     shortDescription: "Masa muscular magra y de calidad.",
     description: "Primobolan (Methenolone Enanthate) es famoso por construir masa muscular de calidad con mínima retención de líquidos.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 77,
     presentation: "100 mg/ml x 10",
@@ -1113,12 +972,10 @@ export const products: Product[] = [
     warnings: "Considerado uno de los esteroides más seguros."
   },
   {
-    id: generateId(["Masteron Enanthate", "Driada", "200 mg/ml x 10"]),
     name: "Masteron Enanthate",
     shortDescription: "Dureza muscular y efecto anti-estrogénico.",
     description: "Masteron (Drostanolone Enanthate) proporciona un aspecto muscular duro y denso, ideal para las últimas semanas de preparación.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 65,
     presentation: "200 mg/ml x 10",
@@ -1128,12 +985,10 @@ export const products: Product[] = [
     warnings: "Puede acelerar la caída del cabello en individuos predispuestos."
   },
   {
-    id: generateId(["Masteron Propionate", "Driada", "100 mg/ml x 10"]),
     name: "Masteron Propionate",
     shortDescription: "Acción rápida para máxima dureza y definición.",
     description: "La versión de propionato de Masteron actúa rápidamente, ideal para ciclos cortos o fases finales de un ciclo de corte.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 50,
     presentation: "100 mg/ml x 10",
@@ -1143,12 +998,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones frecuentes."
   },
   {
-    id: generateId(["Nandrolone (DECA)", "Driada", "200 mg/ml x 10"]),
     name: "Nandrolone (DECA)",
     shortDescription: "Volumen muscular y alivio articular.",
     description: "Conocido como 'Deca', este compuesto es un pilar en ciclos de volumen por sus propiedades para construir masa y lubricar articulaciones.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 38,
     presentation: "200 mg/ml x 10",
@@ -1158,12 +1011,10 @@ export const products: Product[] = [
     warnings: "Usar siempre con una base de testosterona."
   },
   {
-    id: generateId(["Nandrolone (NPP)", "Driada", "100 mg/ml x 10"]),
     name: "Nandrolone (NPP)",
     shortDescription: "Acción rápida para masa magra.",
     description: "NPP es la versión de acción corta de la nandrolona. Permite ganancias de masa magra con menos retención de líquidos.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 32,
     presentation: "100 mg/ml x 10",
@@ -1173,12 +1024,10 @@ export const products: Product[] = [
     warnings: "Requiere inyecciones más frecuentes que el Decanoate."
   },
   {
-    id: generateId(["Trenbolone Enanthate", "Driada", "200 mg/ml x 10"]),
     name: "Trenbolone Enanthate",
     shortDescription: "Ganancias extremas de fuerza y recomposición corporal.",
     description: "La trembolona es uno de los esteroides más potentes. El éster enantato proporciona una liberación sostenida. Solo para usuarios avanzados.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 55,
     presentation: "200 mg/ml x 10",
@@ -1188,12 +1037,10 @@ export const products: Product[] = [
     warnings: "Potentes efectos secundarios. No apto para principiantes."
   },
   {
-    id: generateId(["Trenbolone Acetate", "Driada", "100 mg/ml x 10"]),
     name: "Trenbolone Acetate",
     shortDescription: "Resultados rápidos y drásticos en dureza muscular.",
     description: "El acetato de trembolona es de acción rápida y muy potente. Ideal para ciclos de corte avanzados para una máxima definición.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 50,
     presentation: "100 mg/ml x 10",
@@ -1203,27 +1050,23 @@ export const products: Product[] = [
     warnings: "Potentes efectos secundarios. No apto para principiantes."
   },
   {
-    id: generateId(["Winstrol (Stanozolol)", "Driada", "50 mg/ml x 10"]),
     name: "Winstrol (Stanozolol)",
     shortDescription: "Aspecto seco y vascularizado, ideal para corte.",
     description: "La versión inyectable de Winstrol (estanozolol) es popular para ciclos de corte para lograr un físico duro y definido sin retención de agua.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 33,
     presentation: "50 mg/ml x 10",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/STANOMED50-550x550w.jpg`,
     ingredients: ["Stanozolol"],
     usage: "Inyectar 1ml cada 1-2 días.",
     warnings: "Puede causar dolor en las articulaciones. No aromatiza."
   },
   {
-    id: generateId(["Boldenone", "Driada", "250 mg/ml x 10"]),
     name: "Boldenone",
     shortDescription: "Ganancias de masa magra y aumento del apetito.",
     description: "La boldenona (Equipoise) es conocida por promover ganancias de masa muscular lentas pero de calidad, y por aumentar significativamente el apetito.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 40,
     presentation: "250 mg/ml x 10",
@@ -1233,12 +1076,10 @@ export const products: Product[] = [
     warnings: "Puede aumentar los glóbulos rojos; se recomienda monitoreo."
   },
   {
-    id: generateId(["Trestolone", "Driada", "50 mg/ml x 10"]),
     name: "Trestolone",
     shortDescription: "Potente para ganancias de masa y fuerza.",
     description: "La Trestolona (MENT) es un esteroide muy potente, más anabólico que la testosterona, para ganancias rápidas de masa y fuerza. Solo para usuarios muy avanzados.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 60,
     presentation: "50 mg/ml x 10",
@@ -1248,12 +1089,10 @@ export const products: Product[] = [
     warnings: "Potente y con alta tasa de aromatización. No para principiantes."
   },
   {
-    id: generateId(["Bacteriostatic Water", "Driada", "10ml"]),
     name: "Bacteriostatic Water",
     shortDescription: "Agua estéril para reconstitución de péptidos.",
     description: "Agua bacteriostática estéril que contiene un 0.9% de alcohol bencílico como conservante. Esencial para reconstituir de forma segura péptidos y HGH.",
     category: Category.Inyectables,
-    form: Form.Inyectable,
     lab: "Driada",
     price: 12,
     presentation: "10ml",
@@ -1262,14 +1101,11 @@ export const products: Product[] = [
     usage: "Utilizar la cantidad necesaria para reconstituir el producto deseado.",
     warnings: "Desechar el vial después de 28 días de uso."
   },
-  // Driada Orales
   {
-    id: generateId(["Modafinilo", "Driada", "100mg x 20"]),
     name: "Modafinilo",
     shortDescription: "Potenciador cognitivo y promotor de la vigilia.",
     description: "El modafinilo es un nootrópico que mejora el estado de alerta, la concentración y la función cognitiva, reduciendo la fatiga.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 22,
     presentation: "100mg x 20",
@@ -1279,12 +1115,10 @@ export const products: Product[] = [
     warnings: "Puede interferir con el sueño si se toma tarde."
   },
   {
-    id: generateId(["Clenbuterol", "Driada", "40mcg x 100"]),
     name: "Clenbuterol",
     shortDescription: "Potente quemador de grasa y termogénico.",
     description: "El clenbuterol es un potente termogénico que aumenta la tasa metabólica del cuerpo y promueve la quema de grasa.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 25,
     presentation: "40mcg x 100",
@@ -1294,12 +1128,10 @@ export const products: Product[] = [
     warnings: "Puede causar nerviosismo y aumento del ritmo cardíaco."
   },
   {
-    id: generateId(["Yohimbine", "Driada", "2.5mg x 100"]),
     name: "Yohimbine",
     shortDescription: "Estimulante para la quema de grasa rebelde.",
     description: "La yohimbina HCL es un alcaloide que ayuda a movilizar la grasa rebelde (alfa-2) y actúa como un estimulante.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 21,
     presentation: "2.5mg x 100",
@@ -1309,12 +1141,10 @@ export const products: Product[] = [
     warnings: "Puede causar ansiedad o aumento de la presión arterial."
   },
   {
-    id: generateId(["T3", "Driada", "25mcg x 100"]),
     name: "T3",
     shortDescription: "Hormona tiroidea para acelerar el metabolismo.",
     description: "La liotironina sódica (T3) es una hormona tiroidea que aumenta drásticamente la tasa metabólica, llevando a una rápida pérdida de grasa.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 21,
     presentation: "25mcg x 100",
@@ -1324,12 +1154,10 @@ export const products: Product[] = [
     warnings: "El uso incorrecto puede afectar la función tiroidea. Requiere un uso cuidadoso."
   },
   {
-    id: generateId(["Oxandrolone (Anavar)", "Driada", "10mg x 100"]),
     name: "Oxandrolone (Anavar)",
     shortDescription: "Corte, dureza muscular y fuerza con bajos efectos secundarios.",
     description: "Anavar (Oxandrolona) es un esteroide oral suave conocido por su capacidad para promover la fuerza y la pérdida de grasa. Popular tanto en hombres como en mujeres.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 50,
     presentation: "10mg x 100",
@@ -1339,27 +1167,23 @@ export const products: Product[] = [
     warnings: "Baja toxicidad hepática en comparación con otros orales."
   },
   {
-    id: generateId(["Winstrol (Stanozolol)", "Driada", "10mg x 100"]),
     name: "Winstrol (Stanozolol)",
     shortDescription: "Ideal para ciclos de corte, dureza y vascularización.",
     description: "Winstrol (Estanozolol) oral es excelente para lograr un físico seco y duro. Aumenta la fuerza sin un gran aumento de peso.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 32,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/asteralabs/stanozolol-550x550.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/STANOMED10-550x550w.jpg`,
     ingredients: ["Stanozolol 10mg"],
     usage: "Tomar 20-50mg al día.",
     warnings: "Hepatotóxico. Se recomienda el uso de protectores hepáticos."
   },
   {
-    id: generateId(["Proviron", "Driada", "25mg x 50"]),
     name: "Proviron",
     shortDescription: "Anti-estrógeno suave y mejora de la libido.",
     description: "Proviron (Mesterolona) se utiliza para reducir los efectos secundarios estrogénicos, aumentar la testosterona libre y mejorar la dureza muscular y la libido.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 35,
     presentation: "25mg x 50",
@@ -1369,12 +1193,10 @@ export const products: Product[] = [
     warnings: "Androgénico, puede causar caída del cabello o acné."
   },
   {
-    id: generateId(["Anadrol (Oxymetholone)", "Driada", "50mg x 50"]),
     name: "Anadrol (Oxymetholone)",
     shortDescription: "Ganancias extremas de fuerza y masa en poco tiempo.",
     description: "Anadrol es uno de los esteroides orales más potentes para ganancias masivas de volumen y fuerza. Actúa muy rápidamente.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 34,
     presentation: "50mg x 50",
@@ -1384,12 +1206,10 @@ export const products: Product[] = [
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
   },
   {
-    id: generateId(["Dianabol", "Driada", "10mg x 100"]),
     name: "Dianabol",
     shortDescription: "Ganancias rápidas de volumen y potencia.",
     description: "Dianabol (Metandienona) es un clásico para ganancias rápidas de masa y fuerza. Aumenta la síntesis de proteínas a un ritmo muy elevado.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 30,
     presentation: "10mg x 100",
@@ -1399,12 +1219,10 @@ export const products: Product[] = [
     warnings: "Hepatotóxico. Causa retención de líquidos."
   },
   {
-    id: generateId(["Superdrol", "Driada", "10mg x 100"]),
     name: "Superdrol",
     shortDescription: "Ganancias de masa muscular seca y densa.",
     description: "Superdrol (Metildrostanolona) es un potente esteroide oral que promueve ganancias rápidas de músculo seco y denso, con un notable aumento de la fuerza.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 38,
     presentation: "10mg x 100",
@@ -1414,12 +1232,10 @@ export const products: Product[] = [
     warnings: "Altamente hepatotóxico. Requiere un soporte hepático robusto."
   },
   {
-    id: generateId(["Turinabol", "Driada", "10mg x 100"]),
     name: "Turinabol",
     shortDescription: "Ganancias de calidad con menos efectos secundarios.",
     description: "Turinabol ofrece ganancias de masa magra y fuerza de calidad, con un menor riesgo de efectos secundarios estrogénicos como la retención de agua.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 38,
     presentation: "10mg x 100",
@@ -1429,12 +1245,10 @@ export const products: Product[] = [
     warnings: "Hepatotóxico, aunque menos que otros orales."
   },
   {
-    id: generateId(["Ibutamoren (MK677)", "Driada", "10mg x 50"]),
     name: "Ibutamoren (MK677)",
     shortDescription: "Aumenta la hormona del crecimiento y el apetito.",
     description: "Ibutamoren (MK-677) es un secretagogo de la hormona del crecimiento que aumenta los niveles de GH e IGF-1, mejorando la recuperación, el sueño y el apetito.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 39,
     presentation: "10mg x 50",
@@ -1444,12 +1258,10 @@ export const products: Product[] = [
     warnings: "Puede causar letargo y aumento del apetito."
   },
   {
-    id: generateId(["Ostarine (MK2866)", "Driada", "10mg x 50"]),
     name: "Ostarine (MK2866)",
     shortDescription: "Ganancias de masa magra y prevención de catabolismo.",
     description: "Ostarine (MK-2866) es un SARM popular para ciclos de recomposición y corte. Ayuda a construir masa muscular magra y prevenir la pérdida muscular.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 32,
     presentation: "10mg x 50",
@@ -1459,12 +1271,10 @@ export const products: Product[] = [
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
   },
   {
-    id: generateId(["Arimidex (anastrozol)", "Driada", "0.5mg x 50"]),
     name: "Arimidex (anastrozol)",
     shortDescription: "Control de estrógeno y prevención de ginecomastia.",
     description: "Arimidex (Anastrozol) es un inhibidor de la aromatasa que se utiliza para controlar los niveles de estrógeno durante un ciclo de esteroides.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 26,
     presentation: "0.5mg x 50",
@@ -1474,12 +1284,10 @@ export const products: Product[] = [
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
   },
   {
-    id: generateId(["Exemestano (aromalyn)", "Driada", "25mg x 50"]),
     name: "Exemestano (aromalyn)",
     shortDescription: "Inhibidor de aromatasa suicida para control de estrógeno.",
     description: "El exemestano es un inhibidor de la aromatasa 'suicida', lo que significa que desactiva permanentemente la enzima aromatasa. Muy efectivo para el control del estrógeno.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 52,
     presentation: "25mg x 50",
@@ -1489,12 +1297,10 @@ export const products: Product[] = [
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
   },
   {
-    id: generateId(["Clomiphene", "Driada", "25mg x 100"]),
     name: "Clomiphene",
     shortDescription: "Estimulador de testosterona para Terapia Post-Ciclo (PCT).",
     description: "El clomifeno (Clomid) es un SERM utilizado en la terapia post-ciclo para estimular la producción natural de testosterona bloqueando el estrógeno en el hipotálamo.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 24,
     presentation: "25mg x 100",
@@ -1504,12 +1310,10 @@ export const products: Product[] = [
     warnings: "Puede causar efectos secundarios visuales o emocionales."
   },
   {
-    id: generateId(["Enclomiphene", "Driada", "12.5mg x 50"]),
     name: "Enclomiphene",
     shortDescription: "Isómero puro para una Terapia Post-Ciclo (PCT) más efectiva.",
     description: "El enclomifeno es el isómero más activo del clomifeno, lo que permite una estimulación de testosterona más efectiva con potencialmente menos efectos secundarios.",
     category: Category.Orales,
-    form: Form.Oral,
     lab: "Driada",
     price: 40,
     presentation: "12.5mg x 50",
@@ -1518,9 +1322,8 @@ export const products: Product[] = [
     usage: "Usar en PCT con dosis de 12.5-25mg al día.",
     warnings: "Considerado una opción superior al clomifeno estándar."
   },
-  // HGH & Peptides
+  // HGH & Peptides - This category is an exception to the auto-detection rule.
   {
-    id: generateId(["HCG 5000IU", "Pharmacy", "5000IU x 1"]),
     name: "HCG 5000IU",
     shortDescription: "Estimula la producción de testosterona en PCT.",
     description: "La gonadotropina coriónica humana (HCG) imita a la hormona luteinizante (LH) para estimular los testículos y restaurar la producción de testosterona.",
@@ -1535,7 +1338,6 @@ export const products: Product[] = [
     warnings: "Almacenar en frío una vez reconstituido."
   },
   {
-    id: generateId(["HGH 120IU", "Pharmacy", "12IU x 10"]),
     name: "HGH 120IU",
     shortDescription: "Hormona del crecimiento para recuperación y crecimiento.",
     description: "La somatropina (HGH) es fundamental para la regeneración celular, el crecimiento muscular, la pérdida de grasa y la mejora de la calidad de la piel.",
@@ -1550,7 +1352,6 @@ export const products: Product[] = [
     warnings: "Requiere almacenamiento en frío."
   },
   {
-    id: generateId(["HGH 180IU", "Pharmacy", "18IU x 10"]),
     name: "HGH 180IU",
     shortDescription: "Hormona del crecimiento para recuperación y crecimiento.",
     description: "La somatropina (HGH) es fundamental para la regeneración celular, el crecimiento muscular, la pérdida de grasa y la mejora de la calidad de la piel.",
@@ -1565,7 +1366,6 @@ export const products: Product[] = [
     warnings: "Requiere almacenamiento en frío."
   },
   {
-    id: generateId(["HGH 280IU", "Pharmacy", "28IU x 10"]),
     name: "HGH 280IU",
     shortDescription: "Hormona del crecimiento para recuperación y crecimiento.",
     description: "La somatropina (HGH) es fundamental para la regeneración celular, el crecimiento muscular, la pérdida de grasa y la mejora de la calidad de la piel.",
@@ -1580,7 +1380,6 @@ export const products: Product[] = [
     warnings: "Requiere almacenamiento en frío."
   },
   {
-    id: generateId(["Retatrutide 5", "Pharmacy", "5mg x 1"]),
     name: "Retatrutide 5",
     shortDescription: "Agonista triple para pérdida de peso.",
     description: "Retatrutide es un péptido experimental agonista de los receptores GIP, GLP-1 y glucagón, investigado por su potente efecto en la pérdida de peso.",
@@ -1595,7 +1394,6 @@ export const products: Product[] = [
     warnings: "Producto de investigación."
   },
   {
-    id: generateId(["Retatrutide 10", "Pharmacy", "10mg x 1"]),
     name: "Retatrutide 10",
     shortDescription: "Agonista triple para pérdida de peso.",
     description: "Retatrutide es un péptido experimental agonista de los receptores GIP, GLP-1 y glucagón, investigado por su potente efecto en la pérdida de peso.",
@@ -1610,7 +1408,6 @@ export const products: Product[] = [
     warnings: "Producto de investigación."
   },
   {
-    id: generateId(["Retatrutide 25", "Pharmacy", "25mg x 1"]),
     name: "Retatrutide 25",
     shortDescription: "Agonista triple para pérdida de peso.",
     description: "Retatrutide es un péptido experimental agonista de los receptores GIP, GLP-1 y glucagón, investigado por su potente efecto en la pérdida de peso.",
@@ -1625,7 +1422,6 @@ export const products: Product[] = [
     warnings: "Producto de investigación."
   },
   {
-    id: generateId(["Tirzepatide // Mounjaro", "Pharmacy", "10mg x 1"]),
     name: "Tirzepatide // Mounjaro",
     shortDescription: "Potente agonista dual para control de glucosa y peso.",
     description: "Tirzepatide es un agonista de los receptores GIP y GLP-1, altamente efectivo para el control del azúcar en sangre y una pérdida de peso significativa.",
@@ -1640,7 +1436,6 @@ export const products: Product[] = [
     warnings: "Puede causar efectos secundarios gastrointestinales."
   },
   {
-    id: generateId(["Semaglutide // Ozempic", "Pharmacy", "5mg x 1"]),
     name: "Semaglutide // Ozempic",
     shortDescription: "Agonista GLP-1 para control de peso y glucosa.",
     description: "La semaglutida es un agonista del receptor GLP-1 que ayuda a controlar el apetito, mejorar la sensibilidad a la insulina y promover la pérdida de peso.",
@@ -1655,7 +1450,6 @@ export const products: Product[] = [
     warnings: "Puede causar efectos secundarios gastrointestinales."
   },
   {
-    id: generateId(["Ipamorelin", "Pharmacy", "2mg x 1"]),
     name: "Ipamorelin",
     shortDescription: "Secretagogo de GH para recuperación y anti-envejecimiento.",
     description: "Ipamorelin es un péptido que estimula la liberación de la hormona del crecimiento (GH) de forma pulsátil y controlada, con mínimos efectos secundarios.",
@@ -1670,7 +1464,6 @@ export const products: Product[] = [
     warnings: "Almacenar en frío una vez reconstituido."
   },
   {
-    id: generateId(["Tesamorelin", "Pharmacy", "10mg x 1"]),
     name: "Tesamorelin",
     shortDescription: "Péptido GHRH para reducir la grasa visceral.",
     description: "Tesamorelin es un análogo de la hormona liberadora de la hormona del crecimiento (GHRH) que ha demostrado ser eficaz en la reducción de la grasa abdominal visceral.",
@@ -1685,7 +1478,6 @@ export const products: Product[] = [
     warnings: "Almacenar en frío una vez reconstituido."
   },
   {
-    id: generateId(["HGH Fragment 176-191", "Pharmacy", "5mg x 1"]),
     name: "HGH Fragment 176-191",
     shortDescription: "Fragmento de HGH para una potente quema de grasa.",
     description: "Este fragmento de la molécula de HGH es responsable de sus efectos lipolíticos. Promueve la quema de grasa sin afectar los niveles de glucosa en sangre.",
@@ -1700,7 +1492,6 @@ export const products: Product[] = [
     warnings: "No comer 1-2 horas antes o después de la administración."
   },
   {
-    id: generateId(["Melanotan 2", "Pharmacy", "10mg x 1"]),
     name: "Melanotan 2",
     shortDescription: "Péptido para bronceado y aumento de la libido.",
     description: "Melanotan II estimula la producción de melanina, lo que resulta en un bronceado de la piel con una mínima exposición al sol. También puede aumentar la libido.",
@@ -1715,7 +1506,6 @@ export const products: Product[] = [
     warnings: "Puede causar náuseas y enrojecimiento facial inicial."
   },
   {
-    id: generateId(["GHK-Cu", "Pharmacy", "50mg x 1"]),
     name: "GHK-Cu",
     shortDescription: "Péptido de cobre para la salud de la piel y el cabello.",
     description: "GHK-Cu es un péptido de cobre con potentes efectos regenerativos y antiinflamatorios. Promueve la producción de colágeno, la cicatrización y la salud del cabello.",
@@ -1730,7 +1520,6 @@ export const products: Product[] = [
     warnings: "Consultar un especialista para el método de aplicación."
   },
   {
-    id: generateId(["Glutathione", "Pharmacy", "1500mg x 1"]),
     name: "Glutathione",
     shortDescription: "El antioxidante maestro para la desintoxicación.",
     description: "El glutatión es un tripéptido y el antioxidante más importante del cuerpo. Ayuda a desintoxicar el hígado y a combatir el estrés oxidativo.",
@@ -1745,7 +1534,6 @@ export const products: Product[] = [
     warnings: "Consultar a un profesional de la salud."
   },
   {
-    id: generateId(["TB-500", "Pharmacy", "2mg x 1"]),
     name: "TB-500",
     shortDescription: "Péptido para la recuperación y curación de lesiones.",
     description: "TB-500 es una versión sintética de la Timosina Beta-4, una proteína que promueve la curación de lesiones musculares, tendinosas y ligamentosas.",
@@ -1760,7 +1548,6 @@ export const products: Product[] = [
     warnings: "Almacenar en frío una vez reconstituido."
   },
   {
-    id: generateId(["BPC-157", "Pharmacy", "5mg x 1"]),
     name: "BPC-157",
     shortDescription: "Recuperación acelerada de lesiones y salud articular.",
     description: "BPC-157 es un péptido conocido por sus potentes efectos regenerativos. Acelera la curación de tendones, ligamentos, músculos e incluso puede tener beneficios gastrointestinales.",
@@ -1776,12 +1563,11 @@ export const products: Product[] = [
   },
   // Health & Wellness
   {
-    id: generateId(["Testogel", "Pharmacy", "50mg x 30"]),
     name: "Testogel",
     shortDescription: "Gel de testosterona para Terapia de Reemplazo Hormonal (TRT).",
     description: "Testogel es una forma tópica de testosterona para una aplicación diaria y estable, comúnmente utilizada en TRT.",
     category: Category.HealthWellness,
-    form: Form.Oral, // Form is 'Topical', but enum only has Oral/Injectable.
+    form: Form.Oral, // Topical products are classified as Oral for simplicity.
     lab: "Pharmacy",
     price: 54,
     presentation: "50mg x 30",
@@ -1791,7 +1577,6 @@ export const products: Product[] = [
     warnings: "Evitar el contacto de la zona de aplicación con otras personas."
   },
   {
-    id: generateId(["Ovitrelle", "Pharmacy", "6500iu x 1"]),
     name: "Ovitrelle",
     shortDescription: "HCG recombinante para protocolos de fertilidad o PCT.",
     description: "Ovitrelle contiene coriogonadotropina alfa, una forma de HCG producida por tecnología de ADN recombinante.",
@@ -1806,7 +1591,6 @@ export const products: Product[] = [
     warnings: "Requiere almacenamiento en frío."
   },
   {
-    id: generateId(["Optovite (B12)", "Pharmacy", "10ml"]),
     name: "Optovite (B12)",
     shortDescription: "Vitamina B12 inyectable para energía y salud.",
     description: "Cianocobalamina (Vitamina B12) inyectable para combatir la fatiga, mejorar la función neurológica y apoyar la producción de glóbulos rojos.",
@@ -1821,12 +1605,10 @@ export const products: Product[] = [
     warnings: "Generalmente seguro, pero consultar a un médico."
   },
   {
-    id: generateId(["Telmisartán", "Pharmacy", "40mg x 28"]),
     name: "Telmisartán",
     shortDescription: "Control de la presión arterial.",
     description: "Telmisartán es un antagonista del receptor de la angiotensina II, utilizado para tratar la hipertensión arterial, común durante algunos ciclos.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 24,
     presentation: "40mg x 28",
@@ -1836,12 +1618,10 @@ export const products: Product[] = [
     warnings: "Requiere supervisión médica."
   },
   {
-    id: generateId(["Tamoxifen", "Pharmacy", "20mg x 60"]),
     name: "Tamoxifen",
     shortDescription: "SERM para PCT y prevención de ginecomastia.",
     description: "El tamoxifeno (Nolvadex) es un SERM utilizado para prevenir la ginecomastia y como componente clave en la Terapia Post-Ciclo (PCT).",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 22,
     presentation: "20mg x 60",
@@ -1851,12 +1631,10 @@ export const products: Product[] = [
     warnings: "Puede tener efectos secundarios. Usar bajo supervisión."
   },
   {
-    id: generateId(["Nebivolol", "Pharmacy", "5mg x 28"]),
     name: "Nebivolol",
     shortDescription: "Betabloqueante para la salud cardiovascular.",
     description: "Nebivolol es un betabloqueante que ayuda a controlar la presión arterial y la frecuencia cardíaca, a menudo usado para mitigar los efectos de estimulantes.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 17,
     presentation: "5mg x 28",
@@ -1866,12 +1644,10 @@ export const products: Product[] = [
     warnings: "Requiere supervisión médica."
   },
   {
-    id: generateId(["Pitavastatin", "Pharmacy", "1mg x 28"]),
     name: "Pitavastatin",
     shortDescription: "Estatina para el control del colesterol.",
     description: "La pitavastatina se usa para reducir los niveles de colesterol LDL ('malo') y triglicéridos en la sangre, importante para la salud cardiovascular durante los ciclos.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 21,
     presentation: "1mg x 28",
@@ -1881,12 +1657,10 @@ export const products: Product[] = [
     warnings: "Requiere supervisión médica y análisis de sangre."
   },
   {
-    id: generateId(["Pitavastatin", "Pharmacy", "2mg x 28"]),
     name: "Pitavastatin",
     shortDescription: "Estatina para el control del colesterol.",
     description: "La pitavastatina se usa para reducir los niveles de colesterol LDL ('malo') y triglicéridos en la sangre, importante para la salud cardiovascular durante los ciclos.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 34,
     presentation: "2mg x 28",
@@ -1896,12 +1670,10 @@ export const products: Product[] = [
     warnings: "Requiere supervisión médica y análisis de sangre."
   },
   {
-    id: generateId(["Ursobilane", "Pharmacy", "300mg x 60"]),
     name: "Ursobilane",
     shortDescription: "Protector hepático y para la salud biliar.",
     description: "El ácido ursodesoxicólico (Ursobilane) ayuda a proteger el hígado, especialmente durante el uso de esteroides orales, y a disolver los cálculos biliares.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 25,
     presentation: "300mg x 60",
@@ -1911,12 +1683,10 @@ export const products: Product[] = [
     warnings: "Apoyo hepático esencial."
   },
   {
-    id: generateId(["Cabergoline", "Pharmacy", "0.5mg x 8"]),
     name: "Cabergoline",
     shortDescription: "Control de la prolactina.",
     description: "La cabergolina se usa para reducir los niveles elevados de prolactina, un efecto secundario común de compuestos como la nandrolona y la trembolona.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 32,
     presentation: "0.5mg x 8",
@@ -1926,12 +1696,10 @@ export const products: Product[] = [
     warnings: "Potente, usar con precaución y basado en análisis."
   },
   {
-    id: generateId(["Eutirox (T4)", "Pharmacy", "100mcg x 100"]),
     name: "Eutirox (T4)",
     shortDescription: "Hormona tiroidea para la función metabólica.",
     description: "La levotiroxina (T4) es una hormona tiroidea utilizada para tratar el hipotiroidismo o para apoyar la función metabólica.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 16,
     presentation: "100mcg x 100",
@@ -1941,12 +1709,10 @@ export const products: Product[] = [
     warnings: "Requiere supervisión médica estricta."
   },
   {
-    id: generateId(["Efedrina", "Pharmacy", "50mg x 24"]),
     name: "Efedrina",
     shortDescription: "Estimulante y supresor del apetito.",
     description: "La efedrina es un potente estimulante del sistema nervioso central, utilizado para la pérdida de grasa y como supresor del apetito, a menudo en combinación con cafeína.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 24,
     presentation: "50mg x 24",
@@ -1956,12 +1722,10 @@ export const products: Product[] = [
     warnings: "Potente estimulante, no apto para todos."
   },
   {
-    id: generateId(["Metformin", "Pharmacy", "1000mg x 50"]),
     name: "Metformin",
     shortDescription: "Control de glucosa y sensibilidad a la insulina.",
     description: "La metformina es un medicamento para la diabetes tipo 2 que mejora la sensibilidad a la insulina, a menudo utilizado por atletas para optimizar el uso de carbohidratos.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 8,
     presentation: "1000mg x 50",
@@ -1971,7 +1735,6 @@ export const products: Product[] = [
     warnings: "Consultar a un médico para su uso."
   },
   {
-    id: generateId(["Fast Insuline (Novorapid)", "Pharmacy", "300IU"]),
     name: "Fast Insuline (Novorapid)",
     shortDescription: "Insulina de acción rápida para el transporte de nutrientes.",
     description: "La insulina de acción rápida se utiliza post-entrenamiento para transportar glucosa y aminoácidos a los músculos, maximizando la recuperación. Solo para usuarios muy avanzados.",
@@ -1986,7 +1749,6 @@ export const products: Product[] = [
     warnings: "El uso incorrecto puede ser fatal. No usar sin supervisión experta."
   },
   {
-    id: generateId(["Slow Insuline (Lantus)", "Pharmacy", "300IU"]),
     name: "Slow Insuline (Lantus)",
     shortDescription: "Insulina de acción lenta para un estado anabólico sostenido.",
     description: "La insulina de acción lenta proporciona niveles basales estables, promoviendo un entorno anabólico durante períodos prolongados. Solo para usuarios muy avanzados.",
@@ -2001,12 +1763,10 @@ export const products: Product[] = [
     warnings: "El uso incorrecto puede ser fatal. No usar sin supervisión experta."
   },
   {
-    id: generateId(["Dercutane // Isotretinoina", "Pharmacy", "10mg x 50"]),
     name: "Dercutane // Isotretinoina",
     shortDescription: "Tratamiento potente para el acné severo.",
     description: "La isotretinoína es un retinoide oral muy efectivo para tratar el acné quístico severo, a menudo un efecto secundario de los ciclos de esteroides.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 32,
     presentation: "10mg x 50",
@@ -2016,12 +1776,10 @@ export const products: Product[] = [
     warnings: "Requiere supervisión médica estricta debido a sus potentes efectos secundarios."
   },
   {
-    id: generateId(["Minoxidil oral", "Pharmacy", "5mg x 100"]),
     name: "Minoxidil oral",
     shortDescription: "Tratamiento para la caída del cabello.",
     description: "El minoxidil oral es un tratamiento sistémico para la alopecia androgénica, promoviendo el crecimiento del cabello.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 59,
     presentation: "5mg x 100",
@@ -2031,12 +1789,10 @@ export const products: Product[] = [
     warnings: "Puede afectar la presión arterial."
   },
   {
-    id: generateId(["Finasteride (oral)", "Pharmacy", "1mg x 28"]),
     name: "Finasteride (oral)",
     shortDescription: "Inhibidor de 5-alfa reductasa para la caída del cabello.",
     description: "La finasterida oral bloquea la conversión de testosterona a DHT, siendo muy efectiva para prevenir y tratar la calvicie de patrón masculino.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 28,
     presentation: "1mg x 28",
@@ -2046,7 +1802,6 @@ export const products: Product[] = [
     warnings: "Puede causar efectos secundarios sexuales en un pequeño porcentaje de usuarios."
   },
   {
-    id: generateId(["Finasteride (tópico)", "Pharmacy", "18ml x 1"]),
     name: "Finasteride (tópico)",
     shortDescription: "Tratamiento localizado para la caída del cabello.",
     description: "La finasterida tópica actúa directamente en el cuero cabelludo para reducir la DHT localmente, con un menor riesgo de efectos secundarios sistémicos.",
@@ -2061,12 +1816,10 @@ export const products: Product[] = [
     warnings: "Menor riesgo de efectos secundarios que la versión oral."
   },
   {
-    id: generateId(["Dutasteride (oral)", "Pharmacy", "0.5mg x 30"]),
     name: "Dutasteride (oral)",
     shortDescription: "Potente inhibidor de 5-alfa reductasa.",
     description: "La dutasterida es un inhibidor de la 5-alfa reductasa más potente que la finasterida, bloqueando más eficazmente la conversión a DHT.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 32,
     presentation: "0.5mg x 30",
@@ -2076,7 +1829,6 @@ export const products: Product[] = [
     warnings: "Mayor riesgo de efectos secundarios que la finasterida."
   },
   {
-    id: generateId(["Gel Ketoconazole (2%)", "Pharmacy", "100ml x 1"]),
     name: "Gel Ketoconazole (2%)",
     shortDescription: "Champú antifúngico para la salud del cuero cabelludo.",
     description: "El ketoconazol es un antifúngico que también ha demostrado tener efectos anti-androgénicos leves, ayudando en el tratamiento de la caída del cabello.",
@@ -2091,12 +1843,10 @@ export const products: Product[] = [
     warnings: "Solo para uso externo."
   },
   {
-    id: generateId(["Clomiphene", "Pharmacy", "50mg x 25"]),
     name: "Clomiphene",
     shortDescription: "Estimulador de testosterona para Terapia Post-Ciclo (PCT).",
     description: "El clomifeno (Clomid) es un SERM utilizado en la terapia post-ciclo para estimular la producción natural de testosterona.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 39,
     presentation: "50mg x 25",
@@ -2106,12 +1856,10 @@ export const products: Product[] = [
     warnings: "Puede causar efectos secundarios visuales."
   },
   {
-    id: generateId(["Arimidex", "Pharmacy", "1mg x 30"]),
     name: "Arimidex",
     shortDescription: "Control de estrógeno durante el ciclo.",
     description: "Arimidex (Anastrozol) es un inhibidor de la aromatasa para controlar los niveles de estrógeno y prevenir la ginecomastia.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 49,
     presentation: "1mg x 30",
@@ -2121,12 +1869,10 @@ export const products: Product[] = [
     warnings: "Ajustar dosis para no suprimir el estrógeno por completo."
   },
   {
-    id: generateId(["Exemestane", "Pharmacy", "25mg x 30"]),
     name: "Exemestane",
     shortDescription: "Inhibidor de aromatasa para control de estrógeno.",
     description: "El exemestano es un inhibidor de la aromatasa 'suicida', muy efectivo para el control del estrógeno durante ciclos.",
     category: Category.HealthWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 69,
     presentation: "25mg x 30",
@@ -2137,12 +1883,11 @@ export const products: Product[] = [
   },
   // Sexual Wellness & Stimulants
   {
-    id: generateId(["Kamagra Jelly", "Pharmacy", "100mg x 7 flavours"]),
     name: "Kamagra Jelly",
     shortDescription: "Sildenafil en gel para una acción rápida.",
     description: "Kamagra Oral Jelly es una forma popular y de rápida absorción de sildenafil, para el tratamiento de la disfunción eréctil.",
     category: Category.SexualWellness,
-    form: Form.Oral,
+    form: Form.Oral, // Exception: Jelly is oral.
     lab: "Pharmacy",
     price: 18,
     presentation: "100mg x 7 flavours",
@@ -2152,12 +1897,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos."
   },
   {
-    id: generateId(["Sildenafil (Cenforce)", "Pharmacy", "100mg x 10"]),
     name: "Sildenafil (Cenforce)",
     shortDescription: "Tratamiento eficaz para la disfunción eréctil.",
     description: "Sildenafil (Viagra) es un inhibidor de la PDE5 que aumenta el flujo sanguíneo al pene, facilitando la erección.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 10,
     presentation: "100mg x 10",
@@ -2167,12 +1910,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
   },
   {
-    id: generateId(["Sildenafil (Cenforce)", "Pharmacy", "150mg x 10"]),
     name: "Sildenafil (Cenforce)",
     shortDescription: "Dosis extra fuerte para la disfunción eréctil.",
     description: "Sildenafil (Viagra) en una dosis más alta para casos que no responden a la dosis estándar.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 15,
     presentation: "150mg x 10",
@@ -2182,12 +1923,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
   },
   {
-    id: generateId(["Sildenafil (Cenforce)", "Pharmacy", "200mg x 10"]),
     name: "Sildenafil (Cenforce)",
     shortDescription: "Máxima potencia para la disfunción eréctil severa.",
     description: "La dosis más alta de Sildenafil para una máxima eficacia en el tratamiento de la disfunción eréctil severa.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 20,
     presentation: "200mg x 10",
@@ -2197,12 +1936,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
   },
   {
-    id: generateId(["Tadalafil (Vidalista)", "Pharmacy", "20mg x 10"]),
     name: "Tadalafil (Vidalista)",
     shortDescription: "Efecto prolongado de hasta 36 horas (Cialis).",
     description: "Tadalafil (Cialis) es conocido como la 'píldora del fin de semana' por su efecto duradero, ofreciendo mayor espontaneidad.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 10,
     presentation: "20mg x 10",
@@ -2212,12 +1949,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
   },
   {
-    id: generateId(["Tadalafil (Vidalista)", "Pharmacy", "40mg x 10"]),
     name: "Tadalafil (Vidalista)",
     shortDescription: "Dosis fuerte para un efecto prolongado.",
     description: "Tadalafil (Cialis) en una dosis más alta para una mayor eficacia, manteniendo su efecto de hasta 36 horas.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 15,
     presentation: "40mg x 10",
@@ -2227,12 +1962,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
   },
   {
-    id: generateId(["Tadalafil (Vidalista)", "Pharmacy", "60mg x 10"]),
     name: "Tadalafil (Vidalista)",
     shortDescription: "Dosis extra fuerte para un efecto prolongado.",
     description: "Tadalafil (Cialis) en una dosis extra fuerte para casos severos de disfunción eréctil, con un efecto de hasta 36 horas.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 20,
     presentation: "60mg x 10",
@@ -2242,12 +1975,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
   },
   {
-    id: generateId(["Tadalafil (Vidalista)", "Pharmacy", "80mg x 10"]),
     name: "Tadalafil (Vidalista)",
     shortDescription: "Máxima potencia para un efecto prolongado.",
     description: "La dosis más alta de Tadalafil (Cialis) para una máxima eficacia, con un efecto de hasta 36 horas.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 25,
     presentation: "80mg x 10",
@@ -2257,12 +1988,10 @@ export const products: Product[] = [
     warnings: "No usar con nitratos o si se tienen problemas cardíacos."
   },
   {
-    id: generateId(["Dapoxetine", "Pharmacy", "60mg x 10"]),
     name: "Dapoxetine",
     shortDescription: "Tratamiento para la eyaculación precoz.",
     description: "La dapoxetina es un ISRS de acción corta diseñado específicamente para tratar la eyaculación precoz, aumentando el tiempo hasta la eyaculación.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 30,
     presentation: "60mg x 10",
@@ -2272,12 +2001,10 @@ export const products: Product[] = [
     warnings: "Consultar a un médico antes de usar."
   },
   {
-    id: generateId(["Dapoxetine + Sildenafil (Cenforce)", "Pharmacy", "160mg x 10"]),
     name: "Dapoxetine + Sildenafil (Cenforce)",
     shortDescription: "Combinación para la disfunción eréctil y la eyaculación precoz.",
     description: "Este producto combina Sildenafil para lograr una erección firme y Dapoxetina para prolongar la duración del acto sexual.",
     category: Category.SexualWellness,
-    form: Form.Oral,
     lab: "Pharmacy",
     price: 32,
     presentation: "160mg x 10",
@@ -2287,3 +2014,44 @@ export const products: Product[] = [
     warnings: "No usar con nitratos. Consultar a un médico."
   }
 ];
+
+export const products: Product[] = productDefinitions.map(p => {
+  let determinedForm: Form;
+
+  // Use manually specified form if it exists (for exceptions like topical gels, jellies, etc.)
+  if (p.form) {
+    determinedForm = p.form;
+  } 
+  // Exception for HGH & Peptides category, which are always injectable as per user request.
+  else if (p.category === Category.HGHPeptides) {
+    determinedForm = Form.Inyectable;
+  } 
+  // Automatic determination logic for all other products.
+  else {
+    const lowerPresentation = p.presentation.toLowerCase();
+    const match = lowerPresentation.match(/x\s*(\d+)/);
+    if (match) {
+      const count = parseInt(match[1], 10);
+      // Products with 20 or more units are considered Oral.
+      if (count >= 20) {
+        determinedForm = Form.Oral;
+      } else {
+        // Products with less than 20 units (e.g., x10) are considered Injectable.
+        determinedForm = Form.Inyectable;
+      }
+    } else {
+      // Default for presentations without 'x [number]' format (e.g., '10ml', '300IU').
+      // These are typically injectable.
+      determinedForm = Form.Inyectable;
+    }
+  }
+
+  // Combine the definition with the generated id and determined form.
+  const finalProduct: Product = {
+    ...p,
+    id: generateId([p.name, p.lab, p.presentation]),
+    form: determinedForm,
+  };
+
+  return finalProduct;
+});
