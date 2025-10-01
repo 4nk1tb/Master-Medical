@@ -29,18 +29,18 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products }) => {
         return singleProduct ? [singleProduct] : [];
     }, [routeId, products]);
 
-    // FIX: The `variants` variable was inferred as `unknown` because the initial value of the `reduce` function was not correctly typed.
-    // By casting the initial empty object `{}` to `Record<string, Product[]>`, we ensure that the accumulator `acc` and the resulting
-    // `labsGroup` object have the correct type, which resolves the error when calling `.map` on `variants`.
+    // FIX: The type inference for `labsGroup` was failing, causing `variants` to be of type `unknown` in a downstream `.map()` call.
+    // The `reduce` function has been updated to use a generic type argument (`reduce<Record<string, Product[]>>`) instead of a type assertion on its initial value.
+    // This is a more robust method for ensuring TypeScript correctly infers the accumulator's type throughout the reduction, resolving the error.
     const labsGroup = useMemo(() => {
-        return productGroup.reduce((acc, variant) => {
+        return productGroup.reduce<Record<string, Product[]>>((acc, variant) => {
             const lab = variant.lab;
             if (!acc[lab]) {
                 acc[lab] = [];
             }
             acc[lab].push(variant);
             return acc;
-        }, {} as Record<string, Product[]>);
+        }, {});
     }, [productGroup]);
     
     const commonDetails = productGroup?.[0];
@@ -61,8 +61,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ products }) => {
     }
     
     const handleBuyRequest = (variant: Product) => {
-        const productName = `${variant.name} (${variant.lab} - ${variant.presentation})`;
-        const message = `Hola, estoy interesado en comprar el siguiente producto: ${productName}`;
+        const message = "Hola quiero hacer un pedido de Master Medical";
         const whatsappUrl = `https://wa.me/34690656118?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };

@@ -16,8 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, isGrouped = false })
     navigate(`/product/${product.id}`);
   };
 
-  const productName = product.name;
-  const message = `Hola, estoy interesado en comprar: ${productName}.`;
+  const message = "Hola quiero hacer un pedido de Master Medical";
   const whatsappUrl = `https://wa.me/34690656118?text=${encodeURIComponent(message)}`;
 
 
