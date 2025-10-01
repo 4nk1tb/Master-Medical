@@ -252,7 +252,7 @@ const productDefinitions: ProductDefinition[] = [
     image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MENT50-550x550w.jpg`,
     ingredients: ["Trestolone Acetate"],
     usage: "Consultar a un especialista. Requiere manejo avanzado de ciclo.",
-    warnings: "Potente y con alta tasa de aromatización. No para principiantes."
+    warnings: "Potente y com alta tasa de aromatización. No para principiantes."
   },
   {
     name: "Bacteriostatic Water",
@@ -366,7 +366,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 61,
     presentation: "50mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OXYMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/oral/front/ANDROMED50-550x550h.jpg`,
     ingredients: ["Oxymetholone 50mg"],
     usage: "Tomar 50mg al día. No exceder 4-6 semanas de uso.",
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
@@ -405,7 +405,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 41,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/TURIMED10-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/oral/front/TURIMED10-550x550h.jpg`,
     ingredients: ["4-Chlorodehydromethyltestosterone 10mg"],
     usage: "Tomar 30-50mg al día.",
     warnings: "Hepatotóxico, aunque menos que otros orales."
@@ -418,7 +418,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 77,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/IBUTAMOREN-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/sarms/front/MK67710_NO_BG-550x550.jpg`,
     ingredients: ["Ibutamoren (MK-677) 10mg"],
     usage: "Tomar 10-25mg al día, preferiblemente antes de dormir.",
     warnings: "Puede causar letargo y aumento del apetito."
@@ -431,7 +431,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 69,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OSTARINE-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/sarms/front/MK286610_NO_BG-550x550.jpg`,
     ingredients: ["Ostarine (MK-2866) 10mg"],
     usage: "Tomar 10-20mg al día.",
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
@@ -444,7 +444,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 57,
     presentation: "1mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/ARIMIMED1-550x550h.jpg`,
     ingredients: ["Anastrozole 1mg"],
     usage: "Tomar 0.5mg cada dos días durante el ciclo.",
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
@@ -457,7 +457,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 69,
     presentation: "25mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/AROMAMED25-550x550h.jpg`,
     ingredients: ["Exemestane 25mg"],
     usage: "Tomar 12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
@@ -470,7 +470,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Master Medical",
     price: 54,
     presentation: "50mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/CLOMIMED50-550x550h.jpg`,
     ingredients: ["Clomiphene Citrate 50mg"],
     usage: "Usar durante 4-6 semanas en PCT, con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales o emocionales."
@@ -682,7 +682,7 @@ const productDefinitions: ProductDefinition[] = [
     image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MENT50-550x550w.jpg`,
     ingredients: ["Trestolone Acetate"],
     usage: "Consultar a un especialista. Requiere manejo avanzado de ciclo.",
-    warnings: "Potente y con alta tasa de aromatización. No para principiantes."
+    warnings: "Potente y com alta tasa de aromatización. No para principiantes."
   },
   {
     name: "Bacteriostatic Water",
@@ -770,7 +770,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 29,
     presentation: "50mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OXYMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/oral/front/ANDROMED50-550x550h.jpg`,
     ingredients: ["Oxymetholone 50mg"],
     usage: "Tomar 50mg al día. No exceder 4-6 semanas de uso.",
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
@@ -809,7 +809,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 21,
     presentation: "10mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/TURIMED10-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/oral/front/TURIMED10-550x550h.jpg`,
     ingredients: ["4-Chlorodehydromethyltestosterone 10mg"],
     usage: "Tomar 30-50mg al día.",
     warnings: "Hepatotóxico, aunque menos que otros orales."
@@ -822,7 +822,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 43,
     presentation: "10mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/IBUTAMOREN-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/sarms/front/MK67710_NO_BG-550x550.jpg`,
     ingredients: ["Ibutamoren (MK-677) 10mg"],
     usage: "Tomar 10-25mg al día, preferiblemente antes de dormir.",
     warnings: "Puede causar letargo y aumento del apetito."
@@ -835,7 +835,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 37,
     presentation: "10mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OSTARINE-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/sarms/front/MK286610_NO_BG-550x550.jpg`,
     ingredients: ["Ostarine (MK-2866) 10mg"],
     usage: "Tomar 10-20mg al día.",
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
@@ -848,7 +848,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 31,
     presentation: "1mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/ARIMIMED1-550x550h.jpg`,
     ingredients: ["Anastrozole 1mg"],
     usage: "Tomar 0.5mg cada dos días durante el ciclo.",
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
@@ -861,7 +861,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 32,
     presentation: "25mg x 25",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/AROMAMED25-550x550h.jpg`,
     ingredients: ["Exemestane 25mg"],
     usage: "Tomar 12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
@@ -874,7 +874,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Deus",
     price: 24,
     presentation: "50mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/CLOMIMED50-550x550h.jpg`,
     ingredients: ["Clomiphene Citrate 50mg"],
     usage: "Usar durante 4-6 semanas en PCT, con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales o emocionales."
@@ -1086,7 +1086,7 @@ const productDefinitions: ProductDefinition[] = [
     image: `https://deuschem.com/image/cache/catalog/products%20photo/injectable/front/MENT50-550x550w.jpg`,
     ingredients: ["Trestolone Acetate"],
     usage: "Consultar a un especialista. Requiere manejo avanzado de ciclo.",
-    warnings: "Potente y con alta tasa de aromatización. No para principiantes."
+    warnings: "Potente y com alta tasa de aromatización. No para principiantes."
   },
   {
     name: "Bacteriostatic Water",
@@ -1164,7 +1164,7 @@ const productDefinitions: ProductDefinition[] = [
     image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ANAVAMED10-550x550w.jpg`,
     ingredients: ["Oxandrolone 10mg"],
     usage: "Hombres: 30-50mg al día. Mujeres: 5-10mg al día.",
-    warnings: "Baja toxicidad hepática en comparación con otros orales."
+    warnings: "Baja toxicidad hepática en comparación com otros orales."
   },
   {
     name: "Winstrol (Stanozolol)",
@@ -1200,7 +1200,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 34,
     presentation: "50mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OXYMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/oral/front/ANDROMED50-550x550h.jpg`,
     ingredients: ["Oxymetholone 50mg"],
     usage: "Tomar 50mg al día. No exceder 4-6 semanas de uso.",
     warnings: "Altamente hepatotóxico y puede causar una fuerte retención de líquidos."
@@ -1239,7 +1239,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 38,
     presentation: "10mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/TURIMED10-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/oral/front/TURIMED10-550x550h.jpg`,
     ingredients: ["4-Chlorodehydromethyltestosterone 10mg"],
     usage: "Tomar 30-50mg al día.",
     warnings: "Hepatotóxico, aunque menos que otros orales."
@@ -1252,7 +1252,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 39,
     presentation: "10mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/IBUTAMOREN-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/sarms/front/MK67710_NO_BG-550x550.jpg`,
     ingredients: ["Ibutamoren (MK-677) 10mg"],
     usage: "Tomar 10-25mg al día, preferiblemente antes de dormir.",
     warnings: "Puede causar letargo y aumento del apetito."
@@ -1265,7 +1265,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 32,
     presentation: "10mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/OSTARINE-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/sarms/front/MK286610_NO_BG-550x550.jpg`,
     ingredients: ["Ostarine (MK-2866) 10mg"],
     usage: "Tomar 10-20mg al día.",
     warnings: "Se recomienda una terapia post-ciclo (PCT) suave."
@@ -1278,7 +1278,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 26,
     presentation: "0.5mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/ARIMIMED1-550x550h.jpg`,
     ingredients: ["Anastrozole 0.5mg"],
     usage: "Tomar 0.5mg cada dos días durante el ciclo.",
     warnings: "Puede reducir demasiado el estrógeno si se abusa."
@@ -1291,7 +1291,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 52,
     presentation: "25mg x 50",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/AROMAMED25-550x550h.jpg`,
     ingredients: ["Exemestane 25mg"],
     usage: "Tomar 12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, ajustar dosis con cuidado para no suprimir el estrógeno por completo."
@@ -1304,7 +1304,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Driada",
     price: 24,
     presentation: "25mg x 100",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/CLOMIMED50-550x550h.jpg`,
     ingredients: ["Clomiphene Citrate 25mg"],
     usage: "Usar durante 4-6 semanas en PCT, con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales o emocionales."
@@ -1574,7 +1574,7 @@ const productDefinitions: ProductDefinition[] = [
     image: `https://www.pricerunner.com/product/1200x630/1871233860/Testogel-Gel-50mg-30-Doses.jpg`,
     ingredients: ["Testosterone"],
     usage: "Aplicar sobre la piel limpia y seca una vez al día.",
-    warnings: "Evitar el contacto de la zona de aplicación con otras personas."
+    warnings: "Evitar el contacto de la zona de aplicación com otras personas."
   },
   {
     name: "Ovitrelle",
@@ -1850,7 +1850,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Pharmacy",
     price: 39,
     presentation: "50mg x 25",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/CLOMIMED50-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/CLOMIMED50-550x550h.jpg`,
     ingredients: ["Clomiphene Citrate"],
     usage: "Usar en PCT con dosis de 25-50mg al día.",
     warnings: "Puede causar efectos secundarios visuales."
@@ -1863,7 +1863,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Pharmacy",
     price: 49,
     presentation: "1mg x 30",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/ARIMIMED1-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/ARIMIMED1-550x550h.jpg`,
     ingredients: ["Anastrozole"],
     usage: "0.5mg cada dos días según sea necesario.",
     warnings: "Ajustar dosis para no suprimir el estrógeno por completo."
@@ -1876,7 +1876,7 @@ const productDefinitions: ProductDefinition[] = [
     lab: "Pharmacy",
     price: 69,
     presentation: "25mg x 30",
-    image: `https://deuschem.com/image/cache/catalog/products%20photo/orals/front/EXEMEMED25-550x550w.jpg`,
+    image: `https://deuschem.com/image/cache/catalog/products%20photo/postcycle/front/AROMAMED25-550x550h.jpg`,
     ingredients: ["Exemestane"],
     usage: "12.5-25mg cada día o cada dos días, según sea necesario.",
     warnings: "Potente, usar con precaución."
